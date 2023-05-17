@@ -227,9 +227,22 @@ function profileViewClose(){
 
 function profileView(name){
     $(".profile").css({display:"block"})
-    $(".profile img").attr({src:`img/member/${name}.png`});
-    $(".profile .discription .name").html(member[name].name);
-    $(".profile .discription .content").html(member[name].discription);
+    var color = member[name].color;
+    if(!color.startsWith("#")){
+      color = member[name].color2;
+    }
+    $(".profile .tatie").attr({src:`img/member/${name}.png`}).css({filter: `drop-shadow(15px 10px 0 ${color})`});
+
+    $(".discription").html(`
+      <p class="name">${member[name].name}</p>
+      <p class="title">"${member[name].title}"</p>
+      <p class="content">${member[name].discription}</p>
+      <p class="other">身長：${member[name].height}　誕生日：${member[name].birthday}</p>
+    `);
+    if(member[name].twitter != ""){
+      $(".discription").append(`<a class="twitter" href="${member[name].twitter}"><img class="icon" src="img/icon_twitter.png"></a>`);
+    }
+
     $(".backdrop").css({display:"block"})
     .animate({
         opacity: 1
@@ -241,7 +254,7 @@ function profileView(name){
         height: "500px"
     },500);
     setTimeout(()=>{
-        $(".profile img").animate({
+        $(".profile .tatie").animate({
             opacity:1,
             left: "-120px"
         },500);
@@ -259,93 +272,166 @@ function profileView(name){
 let member = {
     "ami":{
         color:"linear-gradient(90deg, #13bee9, #4bbe95)",
+        color2:"#4bbe95",
         name:"あみ",
-        discription:"hogehogehoge"
+        title:"",
+        discription:"hogehogehoge",
+        height: "",
+        birthday: "",
+        twitter:""
     },
     "ane":{
         color:"#b28194",
         name:"姉ちゃん",
-        discription:'“Hakumai is my life.”<br>可愛い女の子とアイドルが好きなゲラおじさん。<br>メンマは割り箸だと教えられてガチで信じたことがある。<br>ちなみにいもうとのガチ姉。',
-        hight: "153cm"
+        title:"Hakumai is my life.",
+        discription:'可愛い女の子とアイドルが好きなゲラおじさん。<br>メンマは割り箸だと教えられてガチで信じたことがある。<br>ちなみにいもうとのガチ姉。',
+        height: "153cm",
+        birthday: "",
+        twitter:""
     },
     "chiwa":{
         color:"#cc4474",
         name:"ちわ小太郎",
-        discription:"hogehogehoge"
+        title:"",
+        discription:"hogehogehoge",
+        height: "",
+        birthday: "",
+        twitter:""
     }, 
     "cta":{
         color:"#29f6fb",
         name:"C太",
-        discription:"hogehogehoge"
+        title:"",
+        discription:"hogehogehoge",
+        height: "",
+        birthday: "",
+        twitter:""
     }, 
     "fran":{
         color:"#a9fc18",
         name:"Frandle256",
-        discription:"hogehogehoge"
+        title:"",
+        discription:"hogehogehoge",
+        height: "",
+        birthday: "",
+        twitter:""
     }, 
     "gale":{
         color:"#82c6b7",
         name:"gale",
-        discription:"hogehogehoge"
+        title:"",
+        discription:"hogehogehoge",
+        height: "",
+        birthday: "",
+        twitter:""
     }, 
     "han":{
         color:"linear-gradient(90deg,#a599a5 ,#d1ccb6)",
+        color2:"#d1ccb6",
         name:"3010",
-        discription:"hogehogehoge"
+        title:"",
+        discription:"hogehogehoge",
+        height: "",
+        birthday: "",
+        twitter:""
     }, 
     "imo":{
         color:"#7a5f72",
         name:"いもうと",
-        discription:"hogehogehoge"
+        title:"真ハン足元",
+        discription:"元人間の悪魔でBOSG愛好家。<br>TRPGとFPSを反復横跳びしている。<br>ちなみに姉ちゃんのガチ妹。",
+        height: "146cm",
+        birthday: "2/10",
+        twitter:""
     }, 
     "kyomu":{
         color:"#890000",
         name:"虚無虚無ぷりん",
-        discription:"hogehogehoge"
+        title:"",
+        discription:"hogehogehoge",
+        height: "",
+        birthday: "",
+        twitter:""
     }, 
     "mike":{
         color:"#e58d1f",
         name:"若草みけ",
-        discription:"hogehogehoge"
+        title:"和を以て貴しとなす",
+        discription:"大企業グループ傘下の警備会社に勤める一般人。<br>めっちゃ運が悪い。直近では人工肉培養プラントの警備に従事している。<br>好きなものは飯と睡眠、そしてゲーム。",
+        height: "180cm",
+        birthday: "10/24",
+        twitter:""
     }, 
     "retoro":{
         color:"#555555",
         name:"れとろ",
-        discription:"hogehogehoge"
+        title:"ちいこきｲﾉﾁは健康にいい",
+        discription:'貝殻と生き物全般が好きな性別不詳ﾂｰﾄﾝ伏し目。<br>抱えてる黒いおはぎの方が本来の姿。<br>定期的にちいこきｲﾉﾁを爆誕させる。',
+        height: "10～192cm",
+        birthday: "2/4",
+        twitter:""
     }, 
     "sayu":{
         color:"#aaeddb",
         name:"白湯丸太",
-        discription:"hogehogehoge"
+        title:"",
+        discription:"hogehogehoge",
+        height: "",
+        birthday: "",
+        twitter:""
     }, 
     "shigure":{
         color:"#fb0304",
         name:"ふみしぐれ",
-        discription:"hogehogehoge"
+        title:"犯人はお前だーーーッ！！(誤)",
+        discription:"運とパッションで強引に事件を解決させるエンターテイナー名探偵。<br>自称名探テイナー。<br>斧を持ち歩いてる不審者。",
+        height: "166cm",
+        birthday: "2/27",
+        twitter:""
     }, 
     "takei":{
         color:"#89ead7",
         name:"夕ケイ",
-        discription:"hogehogehoge"
+        title:"ｳﾞｰｰｰｰｰｰｰｰｰｰｰｰｰｯ!!!!!!!!!!!!(威嚇)",
+        discription:'猫耳ヘアとスプタンがアイデンティティのMtF。<br>3日でヤニに落ちたヤニカス。<br>舌の魔改造とタバコと激辛好きのせいで舌がんのリスクがピカイチ。',
+        height: "180cm",
+        birthday: "11/21",
+        twitter:""
     }, 
     "via":{
         color:"#728474",
         name:"VIA",
-        discription:"hogehogehoge"
+        title:"",
+        discription:"hogehogehoge",
+        height: "",
+        birthday: "",
+        twitter:""
     }, 
     "yoro":{
         color:"#3a685e",
         name:"吉岡よろ",
-        discription:"hogehogehoge"
+        title:"郷に入っては郷に従え",
+        discription:"糸目エセ関西弁の妖怪。<br>アユの塩焼きが好き。",
+        height: "155cm",
+        birthday: "5/8",
+        twitter:""
     }, 
     "yupi":{
         color:"#0060ff",
         name:"木林ユピテル",
-        discription:"hogehogehoge"
-    }, 
+        title:"　一　撃　必　殺　",
+        discription:'日々「究極の一撃」を求めて様々な兵器の開発に勤しむ研究者。<br>実戦運用とかコストとかそんなのは気にしない。<br>好きな物は酒とエナドリとタバコ',
+        height: "150cm",
+        birthday: "3/17",
+        twitter:"https://twitter.com/6m10cm"
+    },
     "zen":{
         color:"#c11dff",
         name:"漸化式",
-        discription:"hogehogehoge"
+        title:"cute aggression",
+        discription:"社畜の化身。残業？いやいや自己研鑽。<br>単純な顔した小さいものがだぁいすき。<br>でも近寄るな、殴るぞ。",
+        height: "175cm",
+        birthday: "3/20",
+        twitter:""
     }
 }

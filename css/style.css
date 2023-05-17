@@ -15,9 +15,10 @@ header img{
 header img:hover{
     width: 280px;
 }
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
 
 body{
-    background-color: gray;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 #cover{
@@ -230,8 +231,6 @@ body{
     left: 1590px;
     z-index: 5100;
 }
-
-@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
  
 .left_menu{
     z-index: 6000;
@@ -239,7 +238,6 @@ body{
     left: 30px;
     top: 15%;
     font-size: 15px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
     opacity: 0;
     display: none;
 }
@@ -248,14 +246,38 @@ body{
     margin-top: -10px;
     padding: 5px 20px;
     border-radius: 15px;
-    transition: background-color 0.5s;
-    transition: margin-left 0.5s;
+    transition: all 0.5s;
 }
 
 .left_menu p:hover{
     background-color: black;
     color: white;
     margin-left: 10px;
+}
+
+.right_menu{
+    z-index: 6000;
+    position: fixed;
+    right: 30px;
+    top: 15%;
+    font-size: 15px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: right;
+    opacity: 0;
+    display: none;
+}
+
+.right_menu p{
+    margin-top: -10px;
+    padding: 5px 20px;
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+
+.right_menu p:hover{
+    background-color: black;
+    color: white;
+    margin-right: 10px;
 }
 
 .highlight{
@@ -299,22 +321,45 @@ body{
 }
 
 .discription{
+    z-index: 7204;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
-    width: 350px;
-    height: 240px;
+    width: 400px;
+    height: 270px;
     top: 20px;
     left: 670px;
     opacity: 0;
     color: white;
-    padding: 10px 30px;
+    padding: 20px 30px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
-
 .discription .name{
-    font-size: 26px;
+    font-size: 25px;
+    margin: 0;
+}
+.discription .title{
+    font-size: 22px;
+    margin: 0;
+}
+.discription .content{
+    font-size: 15px;
+}
+.discription .other{
+    font-size: 15px;
+}
+.discription .twitter{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.discription .twitter .icon{
+    width: 40px;
 }
 
-.profile img{
+.profile .tatie{
     position: absolute;
     z-index: 7205;
     opacity: 0;
@@ -330,25 +375,40 @@ body{
     right: 100px;
     z-index: 8000;
     font-size: 30px;
+    text-shadow: 0 0 10px white;
+    transition: font-size 0.5s;
+}
+
+.profile .back:hover{
+    font-size: 37px;
 }
 
 .leftgo, .rightgo{
-    background-color: white;
     position: absolute;
     top: 50%;
-    border-radius: 50%;
     font-size: 40px;
     font-weight: bold;
     z-index: 8000;
     width: 56px;
     height: 56px;
     text-align: center;
+    text-shadow: 0 0 10px white;
 }
 
 .leftgo{
     left:100px;
+    transition: left 0.5s;
+}
+
+.leftgo:hover{
+    left:90px;
 }
 
 .rightgo{
     right:100px;
+    transition: right 0.5s;
+}
+
+.rightgo:hover{
+    right:90px;
 }

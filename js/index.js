@@ -50,6 +50,10 @@ $(window).on('load', function () {
                 opacity:"1",
                 left:"20px"
             },500);
+            $(".right_menu").css({display:"block"}).animate({
+                opacity:"1",
+                right:"20px"
+            },500);
         },2800);
     },4000);
 
