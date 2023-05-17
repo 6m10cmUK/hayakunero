@@ -240,6 +240,7 @@ body{
     font-size: 15px;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     opacity: 0;
+    display: none;
 }
 
 .left_menu p{
@@ -325,7 +326,28 @@ body{
 .profile .back{
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 100px;
     z-index: 8000;
     font-size: 30px;
+}
+
+.leftgo, .rightgo{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 8000;
+    width: 56px;
+    height: 56px;
+    text-align: center;
+}
+
+.leftgo{
+    left:100px;
+}
+
+.rightgo{
+    right:100px;
 }

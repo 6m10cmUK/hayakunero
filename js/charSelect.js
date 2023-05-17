@@ -1,6 +1,6 @@
 $(function() {
-
-    var name = ["ami", "ane", "chiwa", "cta", "fran", "gale", "han", "imo", "imo", "kyomu", "mike", "retoro", "sayu", "shigure", "takei", "via", "yoro", "yupi", "zen"];
+    var name = ["ami", "ane", "chiwa", "cta", "fran", "gale", "han", "imo", "kyomu", "mike", "retoro", "sayu", "shigure", "takei", "via", "yoro", "yupi", "zen"];
+    var nowchar = 0;
 
     $(`.${name[0]}_bt`).hover(
       function(e) {
@@ -157,52 +157,73 @@ $(function() {
         }
       );  
 
-      $(`.${name[0]}_bt`).click(()=>{profileView(name[0]);});
-      $(`.${name[1]}_bt`).click(()=>{profileView(name[1]);});
-      $(`.${name[2]}_bt`).click(()=>{profileView(name[2]);});
-      $(`.${name[3]}_bt`).click(()=>{profileView(name[3]);});
-      $(`.${name[4]}_bt`).click(()=>{profileView(name[4]);});
-      $(`.${name[5]}_bt`).click(()=>{profileView(name[5]);});
-      $(`.${name[6]}_bt`).click(()=>{profileView(name[6]);});
-      $(`.${name[7]}_bt`).click(()=>{profileView(name[7]);});
-      $(`.${name[8]}_bt`).click(()=>{profileView(name[8]);});
-      $(`.${name[9]}_bt`).click(()=>{profileView(name[9]);});
-      $(`.${name[10]}_bt`).click(()=>{profileView(name[10]);});
-      $(`.${name[11]}_bt`).click(()=>{profileView(name[11]);});
-      $(`.${name[12]}_bt`).click(()=>{profileView(name[12]);});
-      $(`.${name[13]}_bt`).click(()=>{profileView(name[13]);});
-      $(`.${name[14]}_bt`).click(()=>{profileView(name[14]);});
-      $(`.${name[15]}_bt`).click(()=>{profileView(name[15]);});
-      $(`.${name[16]}_bt`).click(()=>{profileView(name[16]);});
-      $(`.${name[17]}_bt`).click(()=>{profileView(name[17]);});
-      $(`.${name[18]}_bt`).click(()=>{profileView(name[18]);});
-      $(`.${name[19]}_bt`).click(()=>{profileView(name[19]);});
+      $(`.${name[0]}_bt`).click(()=>{nowchar=0; profileView(name[0]);});
+      $(`.${name[1]}_bt`).click(()=>{nowchar=1; profileView(name[1]);});
+      $(`.${name[2]}_bt`).click(()=>{nowchar=2; profileView(name[2]);});
+      $(`.${name[3]}_bt`).click(()=>{nowchar=3; profileView(name[3]);});
+      $(`.${name[4]}_bt`).click(()=>{nowchar=4; profileView(name[4]);});
+      $(`.${name[5]}_bt`).click(()=>{nowchar=5; profileView(name[5]);});
+      $(`.${name[6]}_bt`).click(()=>{nowchar=6; profileView(name[6]);});
+      $(`.${name[7]}_bt`).click(()=>{nowchar=7; profileView(name[7]);});
+      $(`.${name[8]}_bt`).click(()=>{nowchar=8; profileView(name[8]);});
+      $(`.${name[9]}_bt`).click(()=>{nowchar=9; profileView(name[9]);});
+      $(`.${name[10]}_bt`).click(()=>{nowchar=10; profileView(name[10]);});
+      $(`.${name[11]}_bt`).click(()=>{nowchar=11; profileView(name[11]);});
+      $(`.${name[12]}_bt`).click(()=>{nowchar=12; profileView(name[12]);});
+      $(`.${name[13]}_bt`).click(()=>{nowchar=13; profileView(name[13]);});
+      $(`.${name[14]}_bt`).click(()=>{nowchar=14; profileView(name[14]);});
+      $(`.${name[15]}_bt`).click(()=>{nowchar=15; profileView(name[15]);});
+      $(`.${name[16]}_bt`).click(()=>{nowchar=16; profileView(name[16]);});
+      $(`.${name[17]}_bt`).click(()=>{nowchar=17; profileView(name[17]);});
+      $(`.${name[18]}_bt`).click(()=>{nowchar=18; profileView(name[18]);});
 
       $(".back").click(()=>{
-        console.log("hoge");
-        $(".profile").css({display:"none"})
-        $(".profile img").attr({src:``}).css({
-            opacity:0,
-            left: "0"
-        });
-        $(".profile .discription").css({
-            opacity:0,
-            left: "670px"
-        });
-        $(".profile .profile_circle").css({
-            width: "0",
-            height: "0"
-        });
-        $(".profile .discription .name").html();
-        $(".profile .discription .content").html();
-        $(".backdrop").css({
-            display:"none",
-            opacity:0
-        })
-
+        profileViewClose();
       });
-    
+      
+    $(".leftgo").click(()=>{
+        var left = nowchar-1;
+        if(left < 0){
+            left = 17;
+        }
+        nowchar = left;
+        profileViewClose();
+        profileView(name[left]);
+    });
+
+    $(".rightgo").click(()=>{
+        var right = nowchar+1;
+
+        if(right > 17){
+            right = 0;
+        }
+        nowchar = right;
+        profileViewClose();
+        profileView(name[right]);
+    });
 });
+
+function profileViewClose(){
+    $(".profile").css({display:"none"})
+    $(".profile img").attr({src:``}).css({
+        opacity:0,
+        left: "0"
+    });
+    $(".profile .discription").css({
+        opacity:0,
+        left: "670px"
+    });
+    $(".profile .profile_circle").css({
+        width: "0",
+        height: "0"
+    });
+    $(".profile .discription .name").html();
+    $(".profile .discription .content").html();
+    $(".backdrop").css({
+        display:"none",
+        opacity:0
+    })
+}
 
 function profileView(name){
     $(".profile").css({display:"block"})

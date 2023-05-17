@@ -45,7 +45,7 @@ $(window).on('load', function () {
             $(".circle").css({display:"none"})
             $(".triangle").css({display:"none"})
             $(".characters").css({display:"block"});
-            $(".left_menu").animate({
+            $(".left_menu").css({display:"block"}).animate({
                 opacity:"1",
                 left:"20px"
             },500);
