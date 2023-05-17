@@ -87,3 +87,7 @@ function TextTypingAnime() {
 function pageLoad(){
     $("#page").animate({height:"100%"},500);
 }
+
+function pageClose(){
+    $("#page").animate({height:"0"},200);
+}
