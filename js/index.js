@@ -16,6 +16,7 @@ $(window).on('load', function () {
 
 	});
     setTimeout(()=>{
+        $(".TextTyping").css({opacity:1});
         TextTypingAnime();/* アニメーション用の関数を呼ぶ*/
     },1000);
 
