@@ -454,3 +454,11 @@ body{
     z-index: 10000;
     overflow-y: scroll;
 }
+
+#page .page_close{
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
