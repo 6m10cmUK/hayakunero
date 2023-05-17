@@ -265,7 +265,8 @@ let member = {
     "ane":{
         color:"#b28194",
         name:"姉ちゃん",
-        discription:"hogehogehoge"
+        discription:'“Hakumai is my life.”<br>可愛い女の子とアイドルが好きなゲラおじさん。<br>メンマは割り箸だと教えられてガチで信じたことがある。<br>ちなみにいもうとのガチ姉。',
+        hight: "153cm"
     },
     "chiwa":{
         color:"#cc4474",
