@@ -240,7 +240,12 @@ function profileView(name){
       <p class="other">身長：${member[name].height}　誕生日：${member[name].birthday}</p>
     `);
     if(member[name].twitter != ""){
-      $(".discription").append(`<a class="twitter" href="${member[name].twitter}"><img class="icon" src="img/icon_twitter.png"></a>`);
+      $(".discription").append(`<a class="twitter" href="${member[name].twitter}" target="_blank"><img class="icon" src="img/icon_twitter.png"></a>`);
+    }
+    $(".discription").append(`<div class="profile_tag"></div>`);
+    var tags = member[name].tag.split(",");
+    for(var tag of tags){
+      $(".profile_tag").append(`<span style="background-color:${color}; color:${member[name].tagcolor}">${tag}</span>`);
     }
 
     $(".backdrop").css({display:"block"})
@@ -265,7 +270,6 @@ function profileView(name){
             left: "570px"
         }, 500);
     },300);
-
 }
 
 
@@ -278,7 +282,9 @@ let member = {
         discription:"hogehogehoge",
         height: "",
         birthday: "",
-        twitter:""
+        twitter:"",
+        tag:"Splatoon3,MINECRAFT,マイクラ人狼,TRPG,麻雀",
+        tagcolor:"white"
     },
     "ane":{
         color:"#b28194",
@@ -287,7 +293,9 @@ let member = {
         discription:'可愛い女の子とアイドルが好きなゲラおじさん。<br>メンマは割り箸だと教えられてガチで信じたことがある。<br>ちなみにいもうとのガチ姉。',
         height: "153cm",
         birthday: "",
-        twitter:""
+        twitter:"https://twitter.com/neeechaaanda",
+        tag:"APEX,Splatoon3,ポケモン,マリオカート,MINECRAFT,マイクラ人狼,麻雀",
+        tagcolor:"white"
     },
     "chiwa":{
         color:"#cc4474",
@@ -296,7 +304,9 @@ let member = {
         discription:"hogehogehoge",
         height: "",
         birthday: "",
-        twitter:""
+        twitter:"https://twitter.com/chiwa69853238",
+        tag:"APEX,Splatoon3,ポケモン,遊戯王,MINECRAFT,マイクラ人狼,麻雀,ヤニカス",
+        tagcolor:"white"
     }, 
     "cta":{
         color:"#29f6fb",
@@ -305,16 +315,20 @@ let member = {
         discription:"hogehogehoge",
         height: "",
         birthday: "",
-        twitter:""
+        twitter:"https://twitter.com/c_ta_oekaki",
+        tag:"APEX,Splatoon3,MINECRAFT,マイクラ人狼,麻雀",
+        tagcolor:"black"
     }, 
     "fran":{
         color:"#a9fc18",
         name:"Frandle256",
-        title:"",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
-        twitter:""
+        title:"きゅんです",
+        discription:"吸血鬼。<br>飲んでるのは血かと思いきやトマトジュース。<br>自称みんなのアイドル。かわいくなりたい。",
+        height: "161cm",
+        birthday: "5/3",
+        twitter:"https://twitter.com/Frandle_256",
+        tag:"APEX,Splatoon3,マリオカート,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀,VALORANT",
+        tagcolor:"black"
     }, 
     "gale":{
         color:"#82c6b7",
@@ -323,7 +337,9 @@ let member = {
         discription:"hogehogehoge",
         height: "",
         birthday: "",
-        twitter:""
+        twitter:"https://twitter.com/gale43hs",
+        tag:"Splatoon3,ポケモン,遊戯王",
+        tagcolor:"white"
     }, 
     "han":{
         color:"linear-gradient(90deg,#a599a5 ,#d1ccb6)",
@@ -333,7 +349,9 @@ let member = {
         discription:"hogehogehoge",
         height: "",
         birthday: "",
-        twitter:""
+        twitter:"",
+        tag:"APEX,Splatoon3,ポケモン,マリオカート,遊戯王,R6S,MINECRAFT,マイクラ人狼,麻雀,VALORANT,ヤニカス",
+        tagcolor:"black"
     }, 
     "imo":{
         color:"#7a5f72",
@@ -342,7 +360,9 @@ let member = {
         discription:"元人間の悪魔でBOSG愛好家。<br>TRPGとFPSを反復横跳びしている。<br>ちなみに姉ちゃんのガチ妹。",
         height: "146cm",
         birthday: "2/10",
-        twitter:""
+        twitter:"https://twitter.com/imoutodesudesu",
+        tag:"APEX,R6S,TRPG,麻雀,OW2",
+        tagcolor:"white"
     }, 
     "kyomu":{
         color:"#890000",
@@ -351,7 +371,9 @@ let member = {
         discription:"hogehogehoge",
         height: "",
         birthday: "",
-        twitter:""
+        twitter:"",
+        tag:"APEX,ポケモン,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀",
+        tagcolor:"white"
     }, 
     "mike":{
         color:"#e58d1f",
@@ -360,7 +382,9 @@ let member = {
         discription:"大企業グループ傘下の警備会社に勤める一般人。<br>めっちゃ運が悪い。直近では人工肉培養プラントの警備に従事している。<br>好きなものは飯と睡眠、そしてゲーム。",
         height: "180cm",
         birthday: "10/24",
-        twitter:""
+        twitter:"https://twitter.com/mikei_222",
+        tag:"APEX,Splatoon3,ポケモン,マリオカート,遊戯王,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀,VALORANT",
+        tagcolor:"white"
     }, 
     "retoro":{
         color:"#555555",
@@ -369,7 +393,9 @@ let member = {
         discription:'貝殻と生き物全般が好きな性別不詳ﾂｰﾄﾝ伏し目。<br>抱えてる黒いおはぎの方が本来の姿。<br>定期的にちいこきｲﾉﾁを爆誕させる。',
         height: "10～192cm",
         birthday: "2/4",
-        twitter:""
+        twitter:"https://twitter.com/0490sgr",
+        tag:"APEX,Splatoon3,R6S,MINECRAFT,マイクラ人狼,麻雀",
+        tagcolor:"white"
     }, 
     "sayu":{
         color:"#aaeddb",
@@ -378,7 +404,9 @@ let member = {
         discription:"hogehogehoge",
         height: "",
         birthday: "",
-        twitter:""
+        twitter:"https://twitter.com/sayu_kikaku",
+        tag:"麻雀",
+        tagcolor:"black"
     }, 
     "shigure":{
         color:"#fb0304",
@@ -387,7 +415,9 @@ let member = {
         discription:"運とパッションで強引に事件を解決させるエンターテイナー名探偵。<br>自称名探テイナー。<br>斧を持ち歩いてる不審者。",
         height: "166cm",
         birthday: "2/27",
-        twitter:""
+        twitter:"https://twitter.com/shigure_DbD",
+        tag:"APEX,Splatoon3,ポケモン,マリオカート,遊戯王,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀,VALORANT",
+        tagcolor:"white"
     }, 
     "takei":{
         color:"#89ead7",
@@ -396,7 +426,9 @@ let member = {
         discription:'猫耳ヘアとスプタンがアイデンティティのMtF。<br>3日でヤニに落ちたヤニカス。<br>舌の魔改造とタバコと激辛好きのせいで舌がんのリスクがピカイチ。',
         height: "180cm",
         birthday: "11/21",
-        twitter:""
+        twitter:"https://twitter.com/_125tKtt",
+        tag:"Splatoon3,ポケモン,MINECRAFT,マイクラ人狼,TRPG,麻雀,ヤニカス",
+        tagcolor:"black"
     }, 
     "via":{
         color:"#728474",
@@ -405,7 +437,9 @@ let member = {
         discription:"hogehogehoge",
         height: "",
         birthday: "",
-        twitter:""
+        twitter:"https://twitter.com/KimagureViasan",
+        tag:"ヤニカス",
+        tagcolor:"white"
     }, 
     "yoro":{
         color:"#3a685e",
@@ -414,7 +448,9 @@ let member = {
         discription:"糸目エセ関西弁の妖怪。<br>アユの塩焼きが好き。",
         height: "155cm",
         birthday: "5/8",
-        twitter:""
+        twitter:"https://twitter.com/kikakuyoshi",
+        tag:"APEX,Splatoon3,ポケモン,マリオカート,MINECRAFT,マイクラ人狼,麻雀",
+        tagcolor:"white"
     }, 
     "yupi":{
         color:"#0060ff",
@@ -423,7 +459,9 @@ let member = {
         discription:'日々「究極の一撃」を求めて様々な兵器の開発に勤しむ研究者。<br>実戦運用とかコストとかそんなのは気にしない。<br>好きな物は酒とエナドリとタバコ',
         height: "150cm",
         birthday: "3/17",
-        twitter:"https://twitter.com/6m10cm"
+        twitter:"https://twitter.com/6m10cm",
+        tag:"APEX,Splatoon3,ポケモン,遊戯王,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀,VALORANT,ヤニカス",
+        tagcolor:"white"
     },
     "zen":{
         color:"#c11dff",
@@ -432,6 +470,8 @@ let member = {
         discription:"社畜の化身。残業？いやいや自己研鑽。<br>単純な顔した小さいものがだぁいすき。<br>でも近寄るな、殴るぞ。",
         height: "175cm",
         birthday: "3/20",
-        twitter:""
+        twitter:"https://twitter.com/marty99_zen",
+        tag:"APEX,Splatoon3,ポケモン,マリオカート,遊戯王,MINECRAFT,マイクラ人狼,TRPG,麻雀,ヤニカス",
+        tagcolor:"white"
     }
 }

@@ -54,10 +54,12 @@ $(window).on('load', function () {
                 opacity:"1",
                 right:"20px"
             },500);
+            $(".other_menu").css({display:"block"}).animate({
+                opacity:"1",
+                right:"20px"
+            },500);            
         },2800);
     },4000);
-
-
 });
 
 function TextTypingAnime() {
@@ -80,4 +82,8 @@ function TextTypingAnime() {
 			});
 		}
 	});
+}
+
+function pageLoad(){
+    $("#page").animate({height:"100%"},500);
 }

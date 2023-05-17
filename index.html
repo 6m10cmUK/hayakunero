@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/index.js"></script>
         <link rel="stylesheet" href="css/style.css">
@@ -58,11 +59,15 @@
             <p class="zen_bt">漸化式</p>
         </div>
         <div class="right_menu">
-            <p>Gallery</p>
+            <p onClick="pageLoad()">Gallery</p>
             <p>創作企画関連</p>
             <p>OFFLINE-EVENT</p>
             <p>しぐれの代理RPG</p>
             <p>GAME</p>
+        </div>
+        <div class="other_menu">
+            <p>Illustrator: 白湯丸太</p>
+            <p>Page coding: 木林ユピテル</p>
         </div>
         <div class="backdrop"></div>
         <div class="profile">
@@ -73,6 +78,7 @@
             <div class="profile_circle"></div>
             <div class="discription"></div>
         </div>
+        <div id="page"></div>
         <script src="js/charSelect.js"></script>
     </body>
 </html>
