@@ -92,10 +92,10 @@ let member = {
     "kyomu":{
         color:"#890000",
         name:"虚無虚無ぷりん",
-        title:"",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
+        title:"溢れたミルクは返らない",
+        discription:"雌型の姿。本来は深淵から這い出るナニカ。<br>創造する力は現在、イラストと製菓にしか生かされていない。<br>雄型はバイト戦士。",
+        height: "156㎝ or 170㎝",
+        birthday: "8/29",
         twitter:"",
         tag:"APEX,ポケモン,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀",
         tagcolor:"white"
