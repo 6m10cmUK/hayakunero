@@ -159,14 +159,11 @@ $(function() {
 
     function overHighLight(no){
       $("."+name[no]).addClass("highlight");
-      $(".all_img_cover").animate({opacity:1},300);
-      setTimeout(()=>{
-        outHighLight(no);
-      },20000);
+      $(".all_img_cover").css({opacity:1});
     }
     function outHighLight(no){
       $("."+name[no]).removeClass("highlight");
-      $(".all_img_cover").css({opacity:0},200);
+      $(".all_img_cover").css({opacity:0});
     }
 
     
