@@ -261,13 +261,13 @@ function profileView(name){
     setTimeout(()=>{
         $(".profile .tatie").animate({
             opacity:1,
-            left: "-120px"
+            left: "-150px"
         },500);
     },200);
     setTimeout(()=>{
         $(".discription").animate({
             opacity:1,
-            left: "570px"
+            left: "530px"
         }, 500);
     },300);
 }
@@ -292,7 +292,7 @@ let member = {
         title:"Hakumai is my life.",
         discription:'可愛い女の子とアイドルが好きなゲラおじさん。<br>メンマは割り箸だと教えられてガチで信じたことがある。<br>ちなみにいもうとのガチ姉。',
         height: "153cm",
-        birthday: "",
+        birthday: "9/12",
         twitter:"https://twitter.com/neeechaaanda",
         tag:"APEX,Splatoon3,ポケモン,マリオカート,MINECRAFT,マイクラ人狼,麻雀",
         tagcolor:"white"
