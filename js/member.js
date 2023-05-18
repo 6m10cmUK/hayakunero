@@ -26,9 +26,9 @@ let member = {
         color:"#cc4474",
         name:"ちわ小太郎",
         title:"ちゃうんすよ",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
+        discription:"zippoで焦がした前髪は数知れず。<br>髪色髪型がコロコロ変わる。<br>日課は筋トレとランニング。",
+        height: "167cm",
+        birthday: "12/20",
         twitter:"https://twitter.com/chiwa69853238",
         tag:"APEX,Splatoon3,ポケモン,遊戯王,MINECRAFT,マイクラ人狼,麻雀,ヤニカス",
         tagcolor:"white"
