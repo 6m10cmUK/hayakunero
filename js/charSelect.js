@@ -160,6 +160,9 @@ $(function() {
     function overHighLight(no){
       $("."+name[no]).addClass("highlight");
       $(".all_img_cover").animate({opacity:1},300);
+      setTimeout(()=>{
+        outHighLight(no);
+      },20000);
     }
     function outHighLight(no){
       $("."+name[no]).removeClass("highlight");
