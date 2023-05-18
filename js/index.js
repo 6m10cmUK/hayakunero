@@ -53,11 +53,7 @@ $(window).on('load', function () {
             $(".right_menu").css({display:"block"}).animate({
                 opacity:"1",
                 right:"20px"
-            },500);
-            $(".other_menu").css({display:"block"}).animate({
-                opacity:"1",
-                right:"20px"
-            },500);            
+            },500);  
         },2800);
     },4000);
 });
@@ -84,10 +80,16 @@ function TextTypingAnime() {
 	});
 }
 
-function pageLoad(){
+function pageLoad(pagename){
     $("#page").animate({height:"100%"},500);
+    setTimeout(()=>{
+        $(".page_close").css({display:"block"})
+        .animate({opacity:1},200);
+    },500);
+    $(".page_Content").load(`html/${pagename}.html`);
 }
 
 function pageClose(){
+    $(".page_close").css({display:"none",opacity:0});
     $("#page").animate({height:"0"},200);
 }
