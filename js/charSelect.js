@@ -1,477 +1,283 @@
 $(function() {
-    var name = ["ami", "ane", "chiwa", "cta", "fran", "gale", "han", "imo", "kyomu", "mike", "retoro", "sayu", "shigure", "takei", "via", "yoro", "yupi", "zen"];
-    var nowchar = 0;
+  var name = ["ami", "ane", "chiwa", "cta", "fran", "gale", "han", "imo", "kyomu", "mike", "retoro", "sayu", "shigure", "takei", "via", "yoro", "yupi", "zen"];
+  var nowchar = 0;
 
-    $(`.${name[0]}_bt`).hover(
+  $(`.${name[0]}_bt`).hover(
+    function(e) {
+      overHighLight(0);
+    },
+    function(e) {
+      outHighLight(0);
+    }
+  );
+
+  $(`.${name[1]}_bt`).hover(
       function(e) {
-        $("."+name[0]).addClass("highlight");
+        overHighLight(1);
       },
       function(e) {
-        $("."+name[0]).removeClass("highlight");
+        outHighLight(1);
       }
     );
 
-    $(`.${name[1]}_bt`).hover(
-        function(e) {
-          $("."+name[1]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[1]).removeClass("highlight");
-        }
-      );
-  
-      $(`.${name[2]}_bt`).hover(
-        function(e) {
-          $("."+name[2]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[2]).removeClass("highlight");
-        }
-      );
-      $(`.${name[3]}_bt`).hover(
-        function(e) {
-          $("."+name[3]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[3]).removeClass("highlight");
-        }
-      );
-      $(`.${name[4]}_bt`).hover(
-        function(e) {
-          $("."+name[4]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[4]).removeClass("highlight");
-        }
-      );
-      $(`.${name[5]}_bt`).hover(
-        function(e) {
-          $("."+name[5]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[5]).removeClass("highlight");
-        }
-      );
-      $(`.${name[6]}_bt`).hover(
-        function(e) {
-          $("."+name[6]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[6]).removeClass("highlight");
-        }
-      );
-      $(`.${name[7]}_bt`).hover(
-        function(e) {
-          $("."+name[7]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[7]).removeClass("highlight");
-        }
-      );
-      $(`.${name[8]}_bt`).hover(
-        function(e) {
-          $("."+name[8]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[8]).removeClass("highlight");
-        }
-      );
-      $(`.${name[9]}_bt`).hover(
-        function(e) {
-          $("."+name[9]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[9]).removeClass("highlight");
-        }
-      );
-      $(`.${name[10]}_bt`).hover(
-        function(e) {
-          $("."+name[10]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[10]).removeClass("highlight");
-        }
-      );
-      $(`.${name[11]}_bt`).hover(
-        function(e) {
-          $("."+name[11]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[11]).removeClass("highlight");
-        }
-      );
-      $(`.${name[12]}_bt`).hover(
-        function(e) {
-          $("."+name[12]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[12]).removeClass("highlight");
-        }
-      );
-      $(`.${name[13]}_bt`).hover(
-        function(e) {
-          $("."+name[13]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[13]).removeClass("highlight");
-        }
-      );
-      $(`.${name[14]}_bt`).hover(
-        function(e) {
-          $("."+name[14]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[14]).removeClass("highlight");
-        }
-      );
-      $(`.${name[15]}_bt`).hover(
-        function(e) {
-          $("."+name[15]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[15]).removeClass("highlight");
-        }
-      );
-      $(`.${name[16]}_bt`).hover(
-        function(e) {
-          $("."+name[16]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[16]).removeClass("highlight");
-        }
-      );
-      $(`.${name[17]}_bt`).hover(
-        function(e) {
-          $("."+name[17]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[17]).removeClass("highlight");
-        }
-      );
-      $(`.${name[18]}_bt`).hover(
-        function(e) {
-          $("."+name[18]).addClass("highlight");
-        },
-        function(e) {
-          $("."+name[18]).removeClass("highlight");
-        }
-      );  
+    $(`.${name[2]}_bt`).hover(
+      function(e) {
+        overHighLight(2);
+      },
+      function(e) {
+        outHighLight(2);
+      }
+    );
+    $(`.${name[3]}_bt`).hover(
+      function(e) {
+        overHighLight(3);
+      },
+      function(e) {
+        outHighLight(3);
+      }
+    );
+    $(`.${name[4]}_bt`).hover(
+      function(e) {
+        overHighLight(4);
+      },
+      function(e) {
+        outHighLight(4);
+      }
+    );
+    $(`.${name[5]}_bt`).hover(
+      function(e) {
+        overHighLight(5);
+      },
+      function(e) {
+        outHighLight(5);
+      }
+    );
+    $(`.${name[6]}_bt`).hover(
+      function(e) {
+        overHighLight(6);
+      },
+      function(e) {
+        outHighLight(6);
+      }
+    );
+    $(`.${name[7]}_bt`).hover(
+      function(e) {
+        overHighLight(7);
+      },
+      function(e) {
+        outHighLight(7);
+      }
+    );
+    $(`.${name[8]}_bt`).hover(
+      function(e) {
+        overHighLight(8);
+      },
+      function(e) {
+        outHighLight(8);
+      }
+    );
+    $(`.${name[9]}_bt`).hover(
+      function(e) {
+        overHighLight(9);
+      },
+      function(e) {
+        outHighLight(9);
+      }
+    );
+    $(`.${name[10]}_bt`).hover(
+      function(e) {
+        overHighLight(10);
+      },
+      function(e) {
+        outHighLight(10);
+      }
+    );
+    $(`.${name[11]}_bt`).hover(
+      function(e) {
+        overHighLight(11);
+      },
+      function(e) {
+        outHighLight(11);
+      }
+    );
+    $(`.${name[12]}_bt`).hover(
+      function(e) {
+        overHighLight(12);
+      },
+      function(e) {
+        outHighLight(12);
+      }
+    );
+    $(`.${name[13]}_bt`).hover(
+      function(e) {
+        overHighLight(13);
+      },
+      function(e) {
+        outHighLight(13);
+      }
+    );
+    $(`.${name[14]}_bt`).hover(
+      function(e) {
+        overHighLight(14);
+      },
+      function(e) {
+        outHighLight(14);
+      }
+    );
+    $(`.${name[15]}_bt`).hover(
+      function(e) {
+        overHighLight(15);
+      },
+      function(e) {
+        outHighLight(15);
+      }
+    );
+    $(`.${name[16]}_bt`).hover(
+      function(e) {
+        overHighLight(16);
+      },
+      function(e) {
+        outHighLight(16);
+      }
+    );
+    $(`.${name[17]}_bt`).hover(
+      function(e) {
+        overHighLight(17);
+      },
+      function(e) {
+        outHighLight(17);
+      }
+    );
+    $(`.${name[18]}_bt`).hover(
+      function(e) {
+        overHighLight(18);
+      },
+      function(e) {
+        outHighLight(18);
+      }
+    );
 
-      $(`.${name[0]}_bt`).click(()=>{nowchar=0; profileView(name[0]);});
-      $(`.${name[1]}_bt`).click(()=>{nowchar=1; profileView(name[1]);});
-      $(`.${name[2]}_bt`).click(()=>{nowchar=2; profileView(name[2]);});
-      $(`.${name[3]}_bt`).click(()=>{nowchar=3; profileView(name[3]);});
-      $(`.${name[4]}_bt`).click(()=>{nowchar=4; profileView(name[4]);});
-      $(`.${name[5]}_bt`).click(()=>{nowchar=5; profileView(name[5]);});
-      $(`.${name[6]}_bt`).click(()=>{nowchar=6; profileView(name[6]);});
-      $(`.${name[7]}_bt`).click(()=>{nowchar=7; profileView(name[7]);});
-      $(`.${name[8]}_bt`).click(()=>{nowchar=8; profileView(name[8]);});
-      $(`.${name[9]}_bt`).click(()=>{nowchar=9; profileView(name[9]);});
-      $(`.${name[10]}_bt`).click(()=>{nowchar=10; profileView(name[10]);});
-      $(`.${name[11]}_bt`).click(()=>{nowchar=11; profileView(name[11]);});
-      $(`.${name[12]}_bt`).click(()=>{nowchar=12; profileView(name[12]);});
-      $(`.${name[13]}_bt`).click(()=>{nowchar=13; profileView(name[13]);});
-      $(`.${name[14]}_bt`).click(()=>{nowchar=14; profileView(name[14]);});
-      $(`.${name[15]}_bt`).click(()=>{nowchar=15; profileView(name[15]);});
-      $(`.${name[16]}_bt`).click(()=>{nowchar=16; profileView(name[16]);});
-      $(`.${name[17]}_bt`).click(()=>{nowchar=17; profileView(name[17]);});
-      $(`.${name[18]}_bt`).click(()=>{nowchar=18; profileView(name[18]);});
+    function overHighLight(no){
+      $("."+name[no]).addClass("highlight");
+      $(".all_img_cover").animate({opacity:1},300);
+    }
+    function outHighLight(no){
+      $("."+name[no]).removeClass("highlight");
+      $(".all_img_cover").css({opacity:0},200);
+    }
 
-      $(".back").click(()=>{
-        profileViewClose();
-      });
-      
-    $(".leftgo").click(()=>{
-        var left = nowchar-1;
-        if(left < 0){
-            left = 17;
-        }
-        nowchar = left;
-        profileViewClose();
-        profileView(name[left]);
+    
+    $(`.${name[0]}_bt`).click(()=>{nowchar=0; profileView(name[0]);});
+    $(`.${name[1]}_bt`).click(()=>{nowchar=1; profileView(name[1]);});
+    $(`.${name[2]}_bt`).click(()=>{nowchar=2; profileView(name[2]);});
+    $(`.${name[3]}_bt`).click(()=>{nowchar=3; profileView(name[3]);});
+    $(`.${name[4]}_bt`).click(()=>{nowchar=4; profileView(name[4]);});
+    $(`.${name[5]}_bt`).click(()=>{nowchar=5; profileView(name[5]);});
+    $(`.${name[6]}_bt`).click(()=>{nowchar=6; profileView(name[6]);});
+    $(`.${name[7]}_bt`).click(()=>{nowchar=7; profileView(name[7]);});
+    $(`.${name[8]}_bt`).click(()=>{nowchar=8; profileView(name[8]);});
+    $(`.${name[9]}_bt`).click(()=>{nowchar=9; profileView(name[9]);});
+    $(`.${name[10]}_bt`).click(()=>{nowchar=10; profileView(name[10]);});
+    $(`.${name[11]}_bt`).click(()=>{nowchar=11; profileView(name[11]);});
+    $(`.${name[12]}_bt`).click(()=>{nowchar=12; profileView(name[12]);});
+    $(`.${name[13]}_bt`).click(()=>{nowchar=13; profileView(name[13]);});
+    $(`.${name[14]}_bt`).click(()=>{nowchar=14; profileView(name[14]);});
+    $(`.${name[15]}_bt`).click(()=>{nowchar=15; profileView(name[15]);});
+    $(`.${name[16]}_bt`).click(()=>{nowchar=16; profileView(name[16]);});
+    $(`.${name[17]}_bt`).click(()=>{nowchar=17; profileView(name[17]);});
+    $(`.${name[18]}_bt`).click(()=>{nowchar=18; profileView(name[18]);});
+
+    $(".back").click(()=>{
+      profileViewClose();
     });
+    
+  $(".leftgo").click(()=>{
+      var left = nowchar-1;
+      if(left < 0){
+          left = 17;
+      }
+      nowchar = left;
+      profileViewClose();
+      profileView(name[left]);
+  });
 
-    $(".rightgo").click(()=>{
-        var right = nowchar+1;
+  $(".rightgo").click(()=>{
+      var right = nowchar+1;
 
-        if(right > 17){
-            right = 0;
-        }
-        nowchar = right;
-        profileViewClose();
-        profileView(name[right]);
-    });
+      if(right > 17){
+          right = 0;
+      }
+      nowchar = right;
+      profileViewClose();
+      profileView(name[right]);
+  });
 });
 
 function profileViewClose(){
-    $(".profile").css({display:"none"})
-    $(".profile img").attr({src:``}).css({
-        opacity:0,
-        left: "0"
-    });
-    $(".profile .discription").css({
-        opacity:0,
-        left: "670px"
-    });
-    $(".profile .profile_circle").css({
-        width: "0",
-        height: "0"
-    });
-    $(".profile .discription .name").html();
-    $(".profile .discription .content").html();
-    $(".backdrop").css({
-        display:"none",
-        opacity:0
-    })
+  $(".profile").css({display:"none"})
+  $(".profile img").attr({src:``}).css({
+      opacity:0,
+      left: "0"
+  });
+  $(".profile .discription").css({
+      opacity:0,
+      left: "670px"
+  });
+  $(".profile .profile_circle").css({
+      width: "0",
+      height: "0"
+  });
+  $(".profile .discription .name").html();
+  $(".profile .discription .content").html();
+  $(".backdrop").css({
+      display:"none",
+      opacity:0
+  })
 }
 
 function profileView(name){
-    $(".profile").css({display:"block"})
-    var color = member[name].color;
-    if(!color.startsWith("#")){
-      color = member[name].color2;
-    }
-    $(".profile .tatie").attr({src:`img/member/${name}.png`}).css({filter: `drop-shadow(15px 10px 0 ${color})`});
+  $(".profile").css({display:"block"})
+  var color = member[name].color;
+  if(!color.startsWith("#")){
+    color = member[name].color2;
+  }
+  $(".profile .tatie").attr({src:`img/member/${name}.png`}).css({filter: `drop-shadow(15px 10px 0 ${color})`});
 
-    $(".discription").html(`
-      <p class="name">${member[name].name}</p>
-      <p class="title">"${member[name].title}"</p>
-      <p class="content">${member[name].discription}</p>
-      <p class="other">身長：${member[name].height}　誕生日：${member[name].birthday}</p>
-    `);
-    if(member[name].twitter != ""){
-      $(".discription").append(`<a class="twitter" href="${member[name].twitter}" target="_blank"><img class="icon" src="img/icon_twitter.png"></a>`);
-    }
-    $(".discription").append(`<div class="profile_tag"></div>`);
-    var tags = member[name].tag.split(",");
-    for(var tag of tags){
-      $(".profile_tag").append(`<span style="background-color:${color}; color:${member[name].tagcolor}">${tag}</span>`);
-    }
+  $(".discription").html(`
+    <p class="name">${member[name].name}</p>
+    <p class="title">"${member[name].title}"</p>
+    <p class="content">${member[name].discription}</p>
+    <p class="other">身長：${member[name].height}　誕生日：${member[name].birthday}</p>
+  `);
+  if(member[name].twitter != ""){
+    $(".discription").append(`<a class="twitter" href="${member[name].twitter}" target="_blank"><img class="icon" src="img/icon_twitter.png"></a>`);
+  }
+  $(".discription").append(`<div class="profile_tag"></div>`);
+  var tags = member[name].tag.split(",");
+  for(var tag of tags){
+    $(".profile_tag").append(`<span style="background-color:${color}; color:${member[name].tagcolor}">${tag}</span>`);
+  }
 
-    $(".backdrop").css({display:"block"})
-    .animate({
-        opacity: 1
-    },400);
-    $(".profile .profile_circle")
-    .css({"background":member[name].color})
-    .animate({
-        width: "500px",
-        height: "500px"
-    },500);
-    setTimeout(()=>{
-        $(".profile .tatie").animate({
-            opacity:1,
-            left: "-150px"
-        },500);
-    },200);
-    setTimeout(()=>{
-        $(".discription").animate({
-            opacity:1,
-            left: "530px"
-        }, 500);
-    },300);
-}
-
-
-let member = {
-    "ami":{
-        color:"linear-gradient(90deg, #13bee9, #4bbe95)",
-        color2:"#4bbe95",
-        name:"あみ",
-        title:"",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
-        twitter:"",
-        tag:"Splatoon3,MINECRAFT,マイクラ人狼,TRPG,麻雀",
-        tagcolor:"white"
-    },
-    "ane":{
-        color:"#b28194",
-        name:"姉ちゃん",
-        title:"Hakumai is my life.",
-        discription:'可愛い女の子とアイドルが好きなゲラおじさん。<br>メンマは割り箸だと教えられてガチで信じたことがある。<br>ちなみにいもうとのガチ姉。',
-        height: "153cm",
-        birthday: "9/12",
-        twitter:"https://twitter.com/neeechaaanda",
-        tag:"APEX,Splatoon3,ポケモン,マリオカート,MINECRAFT,マイクラ人狼,麻雀",
-        tagcolor:"white"
-    },
-    "chiwa":{
-        color:"#cc4474",
-        name:"ちわ小太郎",
-        title:"",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
-        twitter:"https://twitter.com/chiwa69853238",
-        tag:"APEX,Splatoon3,ポケモン,遊戯王,MINECRAFT,マイクラ人狼,麻雀,ヤニカス",
-        tagcolor:"white"
-    }, 
-    "cta":{
-        color:"#29f6fb",
-        name:"C太",
-        title:"",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
-        twitter:"https://twitter.com/c_ta_oekaki",
-        tag:"APEX,Splatoon3,MINECRAFT,マイクラ人狼,麻雀",
-        tagcolor:"black"
-    }, 
-    "fran":{
-        color:"#a9fc18",
-        name:"Frandle256",
-        title:"きゅんです",
-        discription:"吸血鬼。<br>飲んでるのは血かと思いきやトマトジュース。<br>自称みんなのアイドル。かわいくなりたい。",
-        height: "161cm",
-        birthday: "5/3",
-        twitter:"https://twitter.com/Frandle_256",
-        tag:"APEX,Splatoon3,マリオカート,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀,VALORANT",
-        tagcolor:"black"
-    }, 
-    "gale":{
-        color:"#82c6b7",
-        name:"gale",
-        title:"",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
-        twitter:"https://twitter.com/gale43hs",
-        tag:"Splatoon3,ポケモン,遊戯王",
-        tagcolor:"white"
-    }, 
-    "han":{
-        color:"linear-gradient(90deg,#a599a5 ,#d1ccb6)",
-        color2:"#d1ccb6",
-        name:"3010",
-        title:"",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
-        twitter:"",
-        tag:"APEX,Splatoon3,ポケモン,マリオカート,遊戯王,R6S,MINECRAFT,マイクラ人狼,麻雀,VALORANT,ヤニカス",
-        tagcolor:"black"
-    }, 
-    "imo":{
-        color:"#7a5f72",
-        name:"いもうと",
-        title:"真ハン足元",
-        discription:"元人間の悪魔でBOSG愛好家。<br>TRPGとFPSを反復横跳びしている。<br>ちなみに姉ちゃんのガチ妹。",
-        height: "146cm",
-        birthday: "2/10",
-        twitter:"https://twitter.com/imoutodesudesu",
-        tag:"APEX,R6S,TRPG,麻雀,OW2",
-        tagcolor:"white"
-    }, 
-    "kyomu":{
-        color:"#890000",
-        name:"虚無虚無ぷりん",
-        title:"",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
-        twitter:"",
-        tag:"APEX,ポケモン,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀",
-        tagcolor:"white"
-    }, 
-    "mike":{
-        color:"#e58d1f",
-        name:"若草みけ",
-        title:"和を以て貴しとなす",
-        discription:"大企業グループ傘下の警備会社に勤める一般人。<br>めっちゃ運が悪い。直近では人工肉培養プラントの警備に従事している。<br>好きなものは飯と睡眠、そしてゲーム。",
-        height: "180cm",
-        birthday: "10/24",
-        twitter:"https://twitter.com/mikei_222",
-        tag:"APEX,Splatoon3,ポケモン,マリオカート,遊戯王,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀,VALORANT",
-        tagcolor:"white"
-    }, 
-    "retoro":{
-        color:"#555555",
-        name:"れとろ",
-        title:"ちいこきｲﾉﾁは健康にいい",
-        discription:'貝殻と生き物全般が好きな性別不詳ﾂｰﾄﾝ伏し目。<br>抱えてる黒いおはぎの方が本来の姿。<br>定期的にちいこきｲﾉﾁを爆誕させる。',
-        height: "10～192cm",
-        birthday: "2/4",
-        twitter:"https://twitter.com/0490sgr",
-        tag:"APEX,Splatoon3,R6S,MINECRAFT,マイクラ人狼,麻雀",
-        tagcolor:"white"
-    }, 
-    "sayu":{
-        color:"#aaeddb",
-        name:"白湯丸太",
-        title:"",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
-        twitter:"https://twitter.com/sayu_kikaku",
-        tag:"麻雀",
-        tagcolor:"black"
-    }, 
-    "shigure":{
-        color:"#fb0304",
-        name:"ふみしぐれ",
-        title:"犯人はお前だーーーッ！！(誤)",
-        discription:"運とパッションで強引に事件を解決させるエンターテイナー名探偵。<br>自称名探テイナー。<br>斧を持ち歩いてる不審者。",
-        height: "166cm",
-        birthday: "2/27",
-        twitter:"https://twitter.com/shigure_DbD",
-        tag:"APEX,Splatoon3,ポケモン,マリオカート,遊戯王,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀,VALORANT",
-        tagcolor:"white"
-    }, 
-    "takei":{
-        color:"#89ead7",
-        name:"夕ケイ",
-        title:"ｳﾞｰｰｰｰｰｰｰｰｰｰｰｰｰｯ!!!!!!!!!!!!(威嚇)",
-        discription:'猫耳ヘアとスプタンがアイデンティティのMtF。<br>3日でヤニに落ちたヤニカス。<br>舌の魔改造とタバコと激辛好きのせいで舌がんのリスクがピカイチ。',
-        height: "180cm",
-        birthday: "11/21",
-        twitter:"https://twitter.com/_125tKtt",
-        tag:"Splatoon3,ポケモン,MINECRAFT,マイクラ人狼,TRPG,麻雀,ヤニカス",
-        tagcolor:"black"
-    }, 
-    "via":{
-        color:"#728474",
-        name:"VIA",
-        title:"",
-        discription:"hogehogehoge",
-        height: "",
-        birthday: "",
-        twitter:"https://twitter.com/KimagureViasan",
-        tag:"ヤニカス",
-        tagcolor:"white"
-    }, 
-    "yoro":{
-        color:"#3a685e",
-        name:"吉岡よろ",
-        title:"郷に入っては郷に従え",
-        discription:"糸目エセ関西弁の妖怪。<br>アユの塩焼きが好き。",
-        height: "155cm",
-        birthday: "5/8",
-        twitter:"https://twitter.com/kikakuyoshi",
-        tag:"APEX,Splatoon3,ポケモン,マリオカート,MINECRAFT,マイクラ人狼,麻雀",
-        tagcolor:"white"
-    }, 
-    "yupi":{
-        color:"#0060ff",
-        name:"木林ユピテル",
-        title:"　一　撃　必　殺　",
-        discription:'日々「究極の一撃」を求めて様々な兵器の開発に勤しむ研究者。<br>実戦運用とかコストとかそんなのは気にしない。<br>好きな物は酒とエナドリとタバコ',
-        height: "150cm",
-        birthday: "3/17",
-        twitter:"https://twitter.com/6m10cm",
-        tag:"APEX,Splatoon3,ポケモン,遊戯王,R6S,MINECRAFT,マイクラ人狼,TRPG,麻雀,VALORANT,ヤニカス",
-        tagcolor:"white"
-    },
-    "zen":{
-        color:"#c11dff",
-        name:"漸化式",
-        title:"cute aggression",
-        discription:"社畜の化身。残業？いやいや自己研鑽。<br>単純な顔した小さいものがだぁいすき。<br>でも近寄るな、殴るぞ。",
-        height: "175cm",
-        birthday: "3/20",
-        twitter:"https://twitter.com/marty99_zen",
-        tag:"APEX,Splatoon3,ポケモン,マリオカート,遊戯王,MINECRAFT,マイクラ人狼,TRPG,麻雀,ヤニカス",
-        tagcolor:"white"
-    }
+  $(".backdrop").css({display:"block"})
+  .animate({
+      opacity: 1
+  },400);
+  $(".profile .profile_circle")
+  .css({"background":member[name].color})
+  .animate({
+      width: "500px",
+      height: "500px"
+  },500);
+  setTimeout(()=>{
+      $(".profile .tatie").animate({
+          opacity:1,
+          left: "-150px"
+      },500);
+  },200);
+  setTimeout(()=>{
+      $(".discription").animate({
+          opacity:1,
+          left: "530px"
+      }, 500);
+  },300);
 }

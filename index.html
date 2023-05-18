@@ -1,7 +1,9 @@
-<html>
+<!doctype html>
+<html lang="ja">
     <head>
         <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/index.js"></script>
+        <script src="js/member.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/8-10.css">
         <title>はやく寝ろ</title>
@@ -11,7 +13,7 @@
         <div class="triangle">
         </div>
         <div class="triangle_img">
-            <img src="img/ALL.jpeg">
+            <img class="ALL_img" src="img/ALL.jpeg">
             <div class="characters">
                 <img class="ami" src="img/member/ami.png" alt="">
                 <img class="ane" src="img/member/ane.png" alt="">
@@ -31,6 +33,7 @@
                 <img class="yoro" src="img/member/yoro.png" alt="">
                 <img class="yupi" src="img/member/yupi.png" alt="">
                 <img class="zen" src="img/member/zen.png" alt="">
+                <div class="all_img_cover"></div>
             </div>
         </div>
         <div id="cover">
@@ -38,7 +41,7 @@
         </div>
 
         <div class="left_menu">
-            <p class="ami_bt">あみ</p>
+            <p class="ami_bt" onclick="0">あみ</p>
             <p class="ane_bt">姉ちゃん</p>
             <p class="chiwa_bt">ちわ小太郎</p>
             <p class="cta_bt">C太</p>
@@ -58,28 +61,31 @@
             <p class="zen_bt">漸化式</p>
         </div>
         <div class="right_menu">
-            <p onClick="pageLoad()">Gallery</p>
-            <p>創作企画関連</p>
-            <p>OFFLINE-EVENT</p>
-            <p>しぐれの代理RPG</p>
-            <p>GAME</p>
+            <p class="bt" onclick="pageLoad('gallery')">Gallery</p>
+            <p class="bt" onclick="pageLoad('sousaku')" >創作企画関連</p>
+            <p class="bt" onclick="pageLoad('offline_event')" >OFFLINE-EVENT</p>
+            <p class="bt" onclick="pageLoad('dairiRPG')" >しぐれの代理RPG</p>
+            <p class="bt" onclick="pageLoad('game')" >GAME</p>
+
+            <div class="other_menu">
+                <p>illustration: 白湯丸太</p>
+                <p>Design & Coding: 木林ユピテル</p>
+            </div>
         </div>
-        <div class="other_menu">
-            <p>Illustrator: 白湯丸太</p>
-            <p>Page coding: 木林ユピテル</p>
-        </div>
+
         <div class="backdrop"></div>
         <div class="profile">
-            <p class="back">X</p>
+            <p class="back">×</p>
             <p class="leftgo">＜</p>
             <p class="rightgo">＞</p>
             <img class="tatie" src="" alt="">
             <div class="profile_circle"></div>
             <div class="discription"></div>
         </div>
+        <div class="page_close" onclick="pageClose()">▼</div>
         <div id="page">
-            <span class="page_close" onclick="pageClose()">X</span>
+            <div class="page_Content">hoge</div>
         </div>
         <script src="js/charSelect.js"></script>
     </body>
-</html>
+</htm
