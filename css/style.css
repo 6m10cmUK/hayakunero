@@ -463,6 +463,15 @@ body{
     height: 0;
     z-index: 10000;
     overflow-y: scroll;
+    /*スクロールバー非表示（IE・Edge）*/
+    -ms-overflow-style: none;
+    /*スクロールバー非表示（Firefox）*/
+    scrollbar-width: none;
+}
+
+/*スクロールバー非表示（Chrome・Safari）*/
+#page::-webkit-scrollbar{
+    display:none;
 }
 
 .page_close{
