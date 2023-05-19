@@ -39,8 +39,8 @@
     }
 
     .profile .back{
-        bottom: 220px;
-        right: -220px;
+        bottom: 250px;
+        right: -100px;
         z-index: 8000;
         font-size: 50px;
     }

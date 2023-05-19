@@ -1,5 +1,5 @@
 // タップ時の誤動作を防ぐためのスワイプ時の処理を実行しない最小距離
-const minimumDistance = 1
+const minimumDistance = 15
 // スワイプ開始時の座標
 let startX = 0
 let startY = 0
@@ -44,14 +44,26 @@ window.addEventListener('touchend', (e) =>  {
 var left_menu = false;
 var right_menu = false;
 
+var profile = false;
+
 function spMenuOpen(direction){
+    if(profile){
+      // console.log("profile");
+      // if(direction == "R"){
+      //   rightgo();
+      // }else
+      // if(direction == "L"){
+      //   leftgo_();
+      // }
+    }else 
     if(!left_menu && !right_menu && direction == "R"){
         left_menu = true;
         $(".sp_left_menu").addClass("sp_left_menu_open");
-    }
-
+        $(".sp_left_menu .sp_left_menu_sign .yazirushi").css({transform:"rotate(-90deg)"});
+    }else
     if(left_menu && !right_menu && direction == "L"){
         left_menu = false;
         $(".sp_left_menu").removeClass("sp_left_menu_open");
+        $(".sp_left_menu .sp_left_menu_sign .yazirushi").css({transform:"rotate(90deg)"});
     }
 }

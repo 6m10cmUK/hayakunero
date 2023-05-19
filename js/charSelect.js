@@ -189,34 +189,47 @@ $(function() {
 
     $(".back").click(()=>{
       profileViewClose();
-      spMenuOpen("L");
+      // spMenuOpen("L");
     });
     
   $(".leftgo").click(()=>{
-      var left = nowchar-1;
-      if(left < 0){
-          left = 17;
-      }
-      nowchar = left;
-      profileViewClose();
-      profileView(name[left]);
+    leftgo();
   });
 
   $(".rightgo").click(()=>{
-      var right = nowchar+1;
-
-      if(right > 17){
-          right = 0;
-      }
-      nowchar = right;
-      profileViewClose();
-      profileView(name[right]);
+    rightgo();
   });
-});
+
+  function leftgo(){
+    var left = nowchar-1;
+    if(left < 0){
+        left = 17;
+    }
+    nowchar = left;
+    profileViewClose();
+    setTimeout(()=>{
+      profileView(name[left]);
+    },10);
+  }
+
+  function rightgo(){
+    var right = nowchar+1;
+
+    if(right > 17){
+        right = 0;
+    }
+    nowchar = right;
+    profileViewClose();
+    setTimeout(()=>{
+      profileView(name[right]);
+    },10);
+  }
+
 
 function profileViewClose(){
+  profile = false;
   $(".profile").css({display:"none"})
-  $(".profile .tatie").removeClass("tatie_on");
+  $(".profile .tatie").css({display:"none"}).removeClass("tatie_on");
   $(".discription").removeClass("discription_on");
   $(".profile .profile_circle").css({
       width: "0",
@@ -231,12 +244,13 @@ function profileViewClose(){
 }
 
 function profileView(name){
+  profile = true;
   $(".profile").css({display:"block"})
   var color = member[name].color;
   if(!color.startsWith("#")){
     color = member[name].color2;
   }
-  $(".profile .tatie").attr({src:`img/member/${name}.png`}).css({filter: `drop-shadow(15px 10px 0 ${color})`});
+  $(".profile .tatie").css({display:"block"}).attr({src:`img/member/${name}.png`}).css({filter: `drop-shadow(15px 10px 0 ${color})`});
 
   $(".discription").html(`
     <p class="name">${member[name].name}</p>
@@ -270,3 +284,5 @@ function profileView(name){
       $(".discription").addClass("discription_on");
   },300);
 }
+
+});

@@ -420,7 +420,8 @@ left-1532
     width: 850px;
     top: -200px;
     left: 0;
-    transition: opacity, left 0.5s;
+    transition: opacity 0.5s, left 0.5s;
+    display: none;
 }
 
 .profile .tatie_on{
@@ -559,15 +560,21 @@ left-1532
 .sp_left_menu .sp_left_menu_sign{
     position: absolute;
     top: 50px;
-    right: -100px;
+    right: -80px;
 }
 
 .sp_left_menu .sp_left_menu_sign .yazirushi{
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
     display:inline-block
 }
 
-.sp_left_menu p{
+.sp_left_menu .buttons{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.sp_left_menu .buttons p{
     color: white;
     margin-top: -10px;
     padding: 5px 20px;
@@ -575,7 +582,7 @@ left-1532
     transition: background-color,margin-left 0.5s;
 }
 
-.left_menu p:hover{
+.left_menu .buttons p:hover{
     background-color: white;
     color: black;
     margin-left: 10px;
