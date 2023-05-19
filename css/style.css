@@ -69,7 +69,7 @@ body{
     display: none;
 }
 
-.triangle_img img{
+.triangle_img .ALL_img{
     width: 800px;
     position: absolute;
     top: 50%;
@@ -95,10 +95,13 @@ body{
 .characters{
     position: absolute;
     display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    width: 800px;
+    height: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* top: -225px;
+    left: -200px; */
     z-index: 5000;
 }
 
@@ -119,129 +122,134 @@ body{
     position: absolute;
 }
 
+/*
+top-1325
+left-1532
+*/
+
 .characters .ami{
     width: 400px;
-    top: 1289px;
-    left: 1680px;
+    top: -36px;
+    left: 148px;
     z-index: 5094;
 }
 
 .characters .ane{
     width: 400px;
-    top: 1504px;
-    left: 1691.5px;
+    top: 179px;
+    left: 159.5px;
     z-index: 5102;
 }
 
 .characters .chiwa{
     width: 400px;
-    top: 1611px;
-    left: 1857.5px;
+    top: 286.5px;
+    left: 326px;
     z-index: 5101;
 }
 
 .characters .cta{
     width: 400px;
-    top: 1731.5px;
-    left: 1582px;
+    top: 407px;
+    left: 50px;
     z-index: 5110;
 }
 
 .characters .fran{
     width: 400px;
-    top: 1659px;
-    left: 1746px;
+    top: 334px;
+    left: 214px;
     z-index: 5104;
 }
 
 .characters .gale{
     width: 400px;
-    top: 1424px;
-    left: 1555.5px;
+    top: 99px;
+    left: 23px;
     z-index: 5100;
 }
 
 .characters .han{
     width: 400px;
-    top: 1687px;
-    left: 1468.5px;
+    top: 362px;
+    left: -63px;
     z-index: 5109;
 }
 
 .characters .imo{
     width: 400px;
-    top: 1775px;
-    left: 1681.5px;
+    top: 450px;
+    left: 149.5px;
     z-index: 5110;
 }
 
 .characters .kyomu{
     width: 400px;
-    top: 1282px;
-    left: 1768.5px;
+    top: -43px;
+    left: 236.5px;
     z-index: 5090;
 }
 
 .characters .mike{
     width: 400px;
-    top: 1530.5px;
-    left: 1457.5px;
+    top: 205.5px;
+    left: -74.5px;
     z-index: 5100;
 }
 
 .characters .retoro{
     width: 400px;
-    top: 1305px;
-    left: 1970px;
+    top: -20px;
+    left: 438px;
     z-index: 5100;
 }
 
 .characters .sayu{
     width: 400px;
-    top: 1419px;
-    left: 1976.5px;
+    top: 93.5px;
+    left: 444.5px;
     z-index: 5101;
 }
 
 .characters .shigure{
     width: 400px;
-    top: 1389px;
-    left: 1678px;
+    top: 63.5px;
+    left: 146px;
     z-index: 5095;
 }
 
 .characters .takei{
     width: 400px;
-    top: 1432px;
-    left: 1933px;
+    top: 107px;
+    left: 400.5px;
     z-index: 5100;
 }
 
 .characters .via{
     width: 400px;
-    top: 1280px;
-    left: 1512px;
+    top: -45.5px;
+    left: -19.5px;
     z-index: 5090;
 }
 
 .characters .yoro{
     width: 400px;
-    top: 1507px;
-    left: 2019px;
+    top: 182.5px;
+    left: 486.5px;
     z-index: 5102;
 }
 
 .characters .yupi{
     width: 400px;
-    top: 1700px;
-    left: 1941px;
+    top: 375px;
+    left: 408.5px;
     z-index: 5103;
 }
 
 .characters .zen{
     width: 400px;
-    top: 1608px;
-    left: 1590px;
+    top: 282.5px;
+    left: 58px;
     z-index: 5100;
 }
  
@@ -260,7 +268,7 @@ body{
     margin-top: -10px;
     padding: 5px 20px;
     border-radius: 15px;
-    transition: all 0.5s;
+    transition: background-color,margin-left 0.5s;
     cursor: pointer;
     text-shadow:
             3px 3px 3px white, -3px -3px 3px white,
@@ -302,7 +310,7 @@ body{
     margin-top: -10px;
     padding: 5px 20px;
     border-radius: 15px;
-    transition: all 0.5s;
+    transition: background-color,margin-left 0.5s;
     cursor: pointer;
 }
 
@@ -375,7 +383,13 @@ body{
     border-bottom-right-radius: 40px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    transition: opacity, left 0.5s;
 }
+.discription_on{
+    opacity:1;
+    left: 530px;
+}
+
 .discription .name{
     font-size: 25px;
     margin: 0;
@@ -406,7 +420,12 @@ body{
     width: 850px;
     top: -200px;
     left: 0;
+    transition: opacity, left 0.5s;
+}
 
+.profile .tatie_on{
+    opacity:1;
+    left: -150px;
 }
 
 .profile .back{
@@ -517,4 +536,47 @@ body{
     width: 800px;
     margin: 50px auto;
     opacity: 0;
+}
+
+.sp_left_menu{
+    z-index: 6000;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    height: 100%;
+    width: 160px;
+    top: 0;
+    left: -160px;
+    display: none;
+    transition: left 0.5s;
+    font-size: 13px;
+}
+
+.sp_left_menu_open{
+    left: 0;
+}
+
+.sp_left_menu .sp_left_menu_sign{
+    position: absolute;
+    top: 50px;
+    right: -100px;
+}
+
+.sp_left_menu .sp_left_menu_sign .yazirushi{
+    transform: rotate(-90deg);
+    display:inline-block
+}
+
+.sp_left_menu p{
+    color: white;
+    margin-top: -10px;
+    padding: 5px 20px;
+    border-radius: 15px;
+    transition: background-color,margin-left 0.5s;
+}
+
+.left_menu p:hover{
+    background-color: white;
+    color: black;
+    margin-left: 10px;
 }

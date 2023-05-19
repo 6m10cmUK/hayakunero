@@ -189,6 +189,7 @@ $(function() {
 
     $(".back").click(()=>{
       profileViewClose();
+      spMenuOpen("L");
     });
     
   $(".leftgo").click(()=>{
@@ -215,14 +216,8 @@ $(function() {
 
 function profileViewClose(){
   $(".profile").css({display:"none"})
-  $(".profile img").attr({src:``}).css({
-      opacity:0,
-      left: "0"
-  });
-  $(".profile .discription").css({
-      opacity:0,
-      left: "670px"
-  });
+  $(".profile .tatie").removeClass("tatie_on");
+  $(".discription").removeClass("discription_on");
   $(".profile .profile_circle").css({
       width: "0",
       height: "0"
@@ -269,15 +264,9 @@ function profileView(name){
       height: "500px"
   },500);
   setTimeout(()=>{
-      $(".profile .tatie").animate({
-          opacity:1,
-          left: "-150px"
-      },500);
+      $(".profile .tatie").addClass("tatie_on");
   },200);
   setTimeout(()=>{
-      $(".discription").animate({
-          opacity:1,
-          left: "530px"
-      }, 500);
+      $(".discription").addClass("discription_on");
   },300);
 }

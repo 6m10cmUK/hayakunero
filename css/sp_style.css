@@ -1,0 +1,66 @@
+@media (max-width : 780px) {
+    .triangle_img .ALL_img, .triangle_img .characters{
+        transform:
+            translate(-50%, -50%)
+            scale(0.5);
+    }
+
+    .all_img_cover, .left_menu, .right_menu{
+        display: none !important;
+    }
+    
+    .sp_left_menu{
+        display: block;
+    }
+
+    .profile{
+        transform:
+            translate(-50%, -50%)
+            scale(0.6);
+        width: 100%;
+    }
+
+    .profile .tatie{
+        left: -180px;
+    }
+    
+    .profile .tatie_on{
+        left: -300px;
+    }
+
+    .profile .discription{
+        transform: scale(1.2);
+        top: 350px;
+        left: 120px;
+    }
+    .profile .discription_on{
+        opacity:1;
+        left: 15px;
+    }
+
+    .profile .back{
+        bottom: 220px;
+        right: -220px;
+        z-index: 8000;
+        font-size: 50px;
+    }
+
+    .leftgo, .rightgo{
+        top: -220px;
+    }
+    .leftgo{
+        left:-40px;
+    }
+    
+    .leftgo:hover{
+        left:-50px;
+    }
+    
+    .rightgo{
+        right:-40px;
+    }
+    
+    .rightgo:hover{
+        right:-50px;
+    }
+}
