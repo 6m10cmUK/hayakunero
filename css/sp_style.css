@@ -63,4 +63,8 @@
     .rightgo:hover{
         right:-50px;
     }
+
+    .sp_touch_area{
+        display: block;
+    }
 }

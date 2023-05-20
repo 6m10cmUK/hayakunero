@@ -1,93 +1,94 @@
-// タップ時の誤動作を防ぐためのスワイプ時の処理を実行しない最小距離
-const minimumDistance = 30
-// スワイプ開始時の座標
-let startX = 0
-let startY = 0
-// スワイプ終了時の座標
-let endX = 0
-let endY = 0
+var direction, position;
+var onTouch = 0;
+const minimumDistance = 20;
 
-// 解説①：移動を開始した座標を取得
-window.addEventListener('touchstart', (e) =>  {
-  startX = e.touches[0].pageX
-  startY = e.touches[0].pageY
-})
-
-// 解説②：移動した座標を取得
-window.addEventListener('touchmove', (e) =>  {
-  endX = e.changedTouches[0].pageX
-  endY = e.changedTouches[0].pageY
-})
-
-
-// 解説③：移動距離から左右or上下の処理を実行
-window.addEventListener('touchend', (e) =>  {
-  // スワイプ終了時にx軸とy軸の移動量を取得
-  // 左スワイプに対応するためMath.abs()で+に変換
-  const distanceX = Math.abs(endX - startX)
-  const distanceY = Math.abs(endX - startY)
-  const X = endX - startX;
-
-  // 左右のスワイプ距離の方が上下より長い && 小さなスワイプは検知しないようにする
-  if (distanceX > distanceY && distanceX > minimumDistance) {
-    // スワイプ後の動作
-    console.log(distanceX);
-    if(X > 0){
-        // spMenuOpen("R");
-    }else{
-        // spMenuOpen("L");
-    }
-    
-    return false;
-  }
-});
-
-var left_menu = false;
-var right_menu = false;
+var leftmenu = false;
+var rightmenu = false;
 
 var profile = false;
-var isLock = false;
 
-function spLeftMenuOpenBt(){
-  console.log("spLeftMenuOpenBt: "+left_menu);
-  isLock = true;
-  if(!left_menu){
-    left_menu = true;
-    $(".sp_left_menu").addClass("sp_left_menu_open");
-    $(".sp_left_menu .sp_left_menu_sign .yazirushi").css({transform:"rotate(-90deg)"});
-  }else
-  if(left_menu){
-    left_menu = false;
-    $(".sp_left_menu").removeClass("sp_left_menu_open");
-    $(".sp_left_menu .sp_left_menu_sign .yazirushi").css({transform:"rotate(90deg)"});
-  }
-  setTimeout(()=>{
-    isLock = false;
-  },50);
-}
+$(function() {
+	$(".sp_touch_area").bind("touchstart", onTouchStart);
+	$(".sp_touch_area").bind("touchmove", onTouchMove);
+	$(".sp_touch_area").bind("touchend", onTouchEnd);
 
-function spMenuOpen(direction){
-  if(isLock){
-    return;
-  }
-  console.log("spMenuOpen: "+left_menu);
-    if(profile){
-      console.log("profile");
-      if(direction == "R"){
-        rightgo();
-      }else
-      if(direction == "L"){
-        leftgo();
+  $(".profile").bind("touchstart", onTouchStart);
+	$(".profile").bind("touchmove", onTouchMove);
+	$(".profile").bind("touchend", onTouchEnd);
+
+	//スワイプ開始時の横方向の座標を格納
+	function onTouchStart(event) {
+    onTouch = 0;
+    position = getPosition(event);
+	}
+	
+	//スワイプの方向（left／right）を取得
+	function onTouchMove(event) {
+    onTouch++;
+		direction = (position > getPosition(event)) ? "L" : "R";
+	}
+	
+	//スワイプ終了時に方向（left／right）をクラス名に指定
+	function onTouchEnd(event) {
+    if(onTouch > minimumDistance){
+      if(!profileCheck()){
+        console.log(onTouch, direction);
+        MenuOpen(direction);
+      } else {
+        console.log("profile", onTouch, direction);
+        if(direction == "L"){
+          rightgo();
+        }else 
+        if(direction == "R"){
+          leftgo();
+        }
       }
-    }else 
-    if(!left_menu && !right_menu && direction == "R"){
-        left_menu = true;
-        $(".sp_left_menu").addClass("sp_left_menu_open");
-        $(".sp_left_menu .sp_left_menu_sign .yazirushi").css({transform:"rotate(-90deg)"});
-    }else
-    if(left_menu && !right_menu && direction == "L"){
-        left_menu = false;
-        $(".sp_left_menu").removeClass("sp_left_menu_open");
-        $(".sp_left_menu .sp_left_menu_sign .yazirushi").css({transform:"rotate(90deg)"});
     }
-}
+	}
+
+  function profileCheck(){
+    if($(".profile").css("display") == "none"){
+      return false;
+    } else 
+    if($(".profile").css("display") == "block"){
+      return true;
+    }
+  }
+	
+	//横方向の座標を取得
+	function getPosition(event) {
+		return event.originalEvent.touches[0].pageX;
+	}
+
+  function MenuOpen(direction){
+    if(!rightmenu && !leftmenu && direction == "R"){
+      leftMenuOpen()
+    } else
+    if(!rightmenu && leftmenu && direction == "L"){
+      leftMenuClose();
+    }
+
+  }
+
+  $(".sp_left_menu_sign").on("click", ()=>{
+    console.log(leftmenu);
+    if(!leftmenu){
+      leftMenuOpen()
+    } else
+    if(leftmenu){
+      leftMenuClose()
+    }
+  });
+
+  function leftMenuOpen(){
+    leftmenu = true;
+    $(".sp_left_menu").addClass("sp_left_menu_open");
+    $(".yazirushi").css({transform: "rotate(-90deg)"});
+  }
+
+  function leftMenuClose(){
+    leftmenu = false;
+    $(".sp_left_menu").removeClass("sp_left_menu_open");
+    $(".yazirushi").css({transform: "rotate(90deg)"});
+  }
+});

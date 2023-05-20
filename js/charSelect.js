@@ -233,7 +233,6 @@ var name_ = ["ami", "ane", "chiwa", "cta", "fran", "gale", "han", "imo", "kyomu"
 
 
 function profileViewClose(){
-  profile = false;
   $(".profile").css({display:"none"})
   $(".profile .tatie").css({display:"none"}).removeClass("tatie_on");
   $(".discription").removeClass("discription_on");
@@ -251,7 +250,6 @@ function profileViewClose(){
 
 function profileView(name){
   console.log(name);
-  profile = true;
   $(".profile").css({display:"block"})
   var color = member[name].color;
   if(!color.startsWith("#")){
