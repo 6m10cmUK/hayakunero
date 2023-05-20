@@ -1,7 +1,7 @@
 $(window).on('load', function () {
-    console.log("var 0.1.18");
+    console.log("var 0.1.19");
 
-    
+
 	var element = $(".TextTyping");
 	element.each(function () {
 		var text = $(this).html();

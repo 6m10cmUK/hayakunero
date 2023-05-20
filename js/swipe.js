@@ -1,6 +1,6 @@
 var direction, position;
 var onTouch = 0;
-const minimumDistance = 20;
+const minimumDistance = 10;
 
 var leftmenu = false;
 var rightmenu = false;
