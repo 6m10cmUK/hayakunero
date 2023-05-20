@@ -5,8 +5,8 @@ let member = {
         name:"あみ",
         title:"不老不死になりたい",
         discription:"マイクラでは山を消し、スプラでは塗り絵をする女の子。<br>単純作業が好きで何時間でも続けている。<br>ふらんに出会うまでマイクラのビーコンを知らなかった。",
-        height: "",
-        birthday: "",
+        height: "157cm",
+        birthday: "6/13",
         twitter:"",
         tag:"Splatoon3,MINECRAFT,マイクラ人狼,TRPG,麻雀",
         tagcolor:"white"
