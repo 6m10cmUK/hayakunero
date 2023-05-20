@@ -1,6 +1,7 @@
-// 画面が読み込まれたらすぐに動かしたい場合の記述
 $(window).on('load', function () {
-	//spanタグを追加する
+    console.log("var 0.1.18");
+
+    
 	var element = $(".TextTyping");
 	element.each(function () {
 		var text = $(this).html();
@@ -17,7 +18,7 @@ $(window).on('load', function () {
 	});
     setTimeout(()=>{
         $(".TextTyping").css({opacity:1});
-        TextTypingAnime();/* アニメーション用の関数を呼ぶ*/
+        TextTypingAnime();
     },1000);
 
     setTimeout(()=>{
