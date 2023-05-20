@@ -1,6 +1,8 @@
+var nowchar = 0;
+
 $(function() {
   var name = ["ami", "ane", "chiwa", "cta", "fran", "gale", "han", "imo", "kyomu", "mike", "retoro", "sayu", "shigure", "takei", "via", "yoro", "yupi", "zen"];
-  var nowchar = 0;
+
 
   $(`.${name[0]}_bt`).hover(
     function(e) {
@@ -200,6 +202,10 @@ $(function() {
     rightgo();
   });
 
+});
+
+var name_ = ["ami", "ane", "chiwa", "cta", "fran", "gale", "han", "imo", "kyomu", "mike", "retoro", "sayu", "shigure", "takei", "via", "yoro", "yupi", "zen"];
+
   function leftgo(){
     var left = nowchar-1;
     if(left < 0){
@@ -208,8 +214,8 @@ $(function() {
     nowchar = left;
     profileViewClose();
     setTimeout(()=>{
-      profileView(name[left]);
-    },10);
+      profileView(name_[left]);
+    },50);
   }
 
   function rightgo(){
@@ -221,8 +227,8 @@ $(function() {
     nowchar = right;
     profileViewClose();
     setTimeout(()=>{
-      profileView(name[right]);
-    },10);
+      profileView(name_[right]);
+    },50);
   }
 
 
@@ -244,6 +250,7 @@ function profileViewClose(){
 }
 
 function profileView(name){
+  console.log(name);
   profile = true;
   $(".profile").css({display:"block"})
   var color = member[name].color;
@@ -285,4 +292,4 @@ function profileView(name){
   },300);
 }
 
-});
+
