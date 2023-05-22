@@ -249,13 +249,12 @@ function profileViewClose(){
 }
 
 function profileView(name){
-  console.log(name);
-  $(".profile").css({display:"block"})
+  $(".profile").css({display:"block"}).attr({id:name});
   var color = member[name].color;
   if(!color.startsWith("#")){
     color = member[name].color2;
   }
-  $(".profile .tatie").css({display:"block"}).attr({src:`img/member/${name}.png`}).css({filter: `drop-shadow(15px 10px 0 ${color})`});
+  $(".profile .tatie").attr({src:`img/member/${name}.png`}).css({display:"block", filter: `drop-shadow(15px 10px 0 ${color})`});
 
   $(".discription").html(`
     <p class="name">${member[name].name}</p>

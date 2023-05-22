@@ -28,6 +28,14 @@
         left: -300px;
     }
 
+    #takei .tatie{
+        left: -150px;
+    }
+    
+    #takei .tatie_on{
+        left: -270px;
+    }
+
     .profile .discription{
         transform: scale(1.2);
         top: 350px;
@@ -66,5 +74,9 @@
 
     .sp_touch_area{
         display: block;
+    }
+
+    .page_Content{
+        width: calc(100% - 20px) !important;
     }
 }

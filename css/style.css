@@ -268,8 +268,9 @@ left-1532
     margin-top: -10px;
     padding: 5px 20px;
     border-radius: 15px;
-    transition: background-color,margin-left 0.5s;
+    transition: margin-left 0.5s;
     cursor: pointer;
+    width: 120px;
     text-shadow:
             3px 3px 3px white, -3px -3px 3px white,
            -3px 3px 3px white,  3px -3px 3px white,
@@ -310,7 +311,7 @@ left-1532
     margin-top: -10px;
     padding: 5px 20px;
     border-radius: 15px;
-    transition: background-color,margin-left 0.5s;
+    transition: margin-right 0.5s;
     cursor: pointer;
 }
 
@@ -427,6 +428,14 @@ left-1532
 .profile .tatie_on{
     opacity:1;
     left: -150px;
+}
+
+#takei .tatie{
+    left: 100px;
+}
+
+#takei .tatie_on{
+    left: -50px;
 }
 
 .profile .back{

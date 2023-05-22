@@ -78,12 +78,22 @@ $(function() {
   }
 
   $(".sp_left_menu_sign").on("click", ()=>{
-    console.log(leftmenu);
+    if(rightmenu){return}
     if(!leftmenu){
       leftMenuOpen()
     } else
     if(leftmenu){
       leftMenuClose()
+    }
+  });
+
+  $(".sp_right_menu_sign").on("click", ()=>{
+    if(leftmenu){return}
+    if(!rightmenu){
+      rightMenuOpen()
+    } else
+    if(rightmenu){
+      rightMenuClose()
     }
   });
 
