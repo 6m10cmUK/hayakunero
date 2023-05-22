@@ -9,7 +9,7 @@
         display: none !important;
     }
     
-    .sp_left_menu{
+    .sp_left_menu, .sp_right_menu{
         display: block;
     }
 

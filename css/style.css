@@ -321,7 +321,7 @@ left-1532
     text-shadow:none;
 }
 
-.other_menu{
+.right_menu .other_menu{
     position: absolute;
     bottom: 0;
     right: 20px;
@@ -596,4 +596,43 @@ left-1532
     top: 0;
     left: 0;
     display: none;
+}
+
+.sp_right_menu{
+    text-align: right;
+    z-index: 6000;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    height: 100%;
+    width: 160px;
+    top: 0;
+    right: -160px;
+    transition: right 0.5s;
+    font-size: 13px;
+    display: none;
+}
+
+.sp_right_menu_open{
+    right: 0;
+}
+
+.sp_right_menu .buttons{
+    right: 10px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.sp_right_menu .other_menu{
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    left: -220px;
+}
+
+.sp_right_menu_sign .yazirushi{
+    transform: rotate(-90deg);
+    display:inline-block;
 }
