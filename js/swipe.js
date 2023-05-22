@@ -61,11 +61,18 @@ $(function() {
 	}
 
   function MenuOpen(direction){
+    console.log(rightmenu);
     if(!rightmenu && !leftmenu && direction == "R"){
       leftMenuOpen()
     } else
     if(!rightmenu && leftmenu && direction == "L"){
       leftMenuClose();
+    } else
+    if(!rightmenu && !leftmenu && direction == "L"){
+      rightMenuOpen()
+    } else
+    if(rightmenu && !leftmenu && direction == "R"){
+      rightMenuClose();
     }
 
   }
@@ -83,12 +90,25 @@ $(function() {
   function leftMenuOpen(){
     leftmenu = true;
     $(".sp_left_menu").addClass("sp_left_menu_open");
-    $(".yazirushi").css({transform: "rotate(-90deg)"});
+    $(".sp_left_menu_sign .yazirushi").css({transform: "rotate(-90deg)"});
   }
 
   function leftMenuClose(){
     leftmenu = false;
     $(".sp_left_menu").removeClass("sp_left_menu_open");
-    $(".yazirushi").css({transform: "rotate(90deg)"});
+    $(".sp_left_menu_sign .yazirushi").css({transform: "rotate(90deg)"});
   }
+
+  function rightMenuOpen(){
+    rightmenu = true;
+    $(".sp_right_menu").addClass("sp_right_menu_open");
+    $(".sp_right_menu_sign .yazirushi").css({transform: "rotate(90deg)"});
+  }
+
+  function rightMenuClose(){
+    rightmenu = false;
+    $(".sp_right_menu").removeClass("sp_right_menu_open");
+    $(".sp_right_menu_sign .yazirushi").css({transform: "rotate(-90deg)"});
+  }
+
 });
