@@ -79,4 +79,7 @@
     .page_Content{
         width: calc(100% - 20px) !important;
     }
+    .bt>a{
+        color: white;
+    }
 }

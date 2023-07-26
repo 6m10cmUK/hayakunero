@@ -1,5 +1,5 @@
 $(window).on('load', function () {
-    console.log("var 0.1.19");
+    console.log("var 0.1.20");
 
 
 	var element = $(".TextTyping");

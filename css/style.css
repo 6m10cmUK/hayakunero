@@ -645,3 +645,8 @@ left-1532
     transform: rotate(-90deg);
     display:inline-block;
 }
+
+.bt>a{
+    text-decoration:none;
+    color: black;
+}

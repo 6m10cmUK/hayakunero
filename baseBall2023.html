@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <style>
+            td>span{
+                font-size: 10px;
+            }
+            table{
+                margin: 30px auto 100px auto;
+                overflow: scroll;
+            }
+            td{
+                padding: 4px 7px;
+            }
+            #nowLoading{
+                background-color: white;
+                position: fixed;
+                width: 100%;
+                height: 100%;
+            }
+            #nowLoading>p{
+                text-align: center;
+                margin-top: 40%;
+            }
+            #backButton{
+                position: fixed;
+                background-color: black;
+                padding: 6px 50px;
+                color: white;
+                border-radius: 18px;
+                bottom: 10px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                -webkit-transform: translate(-50%, 0);
+                -ms-transform: translate(-50%, 0);
+            }
+        </style>
+        <script>
+            //生成したAPIのURLを指定
+            var api_url = 'https://script.google.com/macros/s/AKfycbwqkNLJaZ-EDdh-ds0M5Vnyl9_oJW6JSrgYTErv5KUPfAEG303aJTvTriFR-Ca_vgTz/exec' 
+                        
+            var dairi=[]
+
+            var charDatas = [];
+            var sousaku = {};
+            var charCount = 0;
+
+            $(()=>{
+                fetch(api_url)
+                .then(function (fetch_data) {
+                    return fetch_data.json();
+                })
+                .then(function (json) {
+                    for (var i in json) {
+                        dairi.push(json[i][1]);
+                        for(var j=2; j<=5; j++){
+                            var data = json[i][j].match(/【(.*)】/);
+                            if(data == null){continue}
+                            data[1]+="】【"+json[i][1];
+                            charDatas.push(data[1].split("】【"));
+                        }
+                    }
+                    console.dir(charDatas);
+                    console.dir(dairi);
+                    for(charData of charDatas){
+                        var inputData = [charData[0],charData[2]];
+                        if(sousaku[charData[1]] == undefined){
+                            sousaku[charData[1]]=[inputData];
+                        }else{
+                            sousaku[charData[1]].push(inputData);
+                        }
+                    }
+                    console.dir(sousaku);
+                    var html="<table border='1'><tr><th>代理</th>";
+                    var keys = Object.keys(sousaku);
+                    for(var key of keys){
+                        html+=`<th>${key}</th>`;
+                    }
+                    html+="</tr>";
+                    for(var i=0; i<30; i++){
+                        html+="<tr>";
+
+                        if(dairi[i]?.trim()){
+                            html+=`<td>${dairi[i]}</td>`;
+                            charCount++;
+                        }else{
+                            html+="<td>-</td>";
+                        }
+
+                        for(var key of keys){
+                            if(sousaku[key][i] == undefined){
+                                html+=`<td>-</td>`;
+                            }else{
+                                html+=`<td>${sousaku[key][i][0]}<br><span>${sousaku[key][i][1]}</span></td>`;
+                                charCount++;
+                            }
+                        }
+                        html+="</tr>";
+                    }
+                    html+="</table>";
+                    $("#main").html(html);
+                    console.log(charCount);
+                    $(".count").html(`${charCount}/${15*3}`);
+                    $("#nowLoading").css({display:"none"});
+                });
+            });
+
+            function backButton(){
+                window.location.href = "index.html"
+            }
+        </script>
+        <div id="nowLoading"><p>Now Loading...</p></div>
+        <div id="backButton" onclick="backButton()">もどる</div>
+         <div>はやく寝ろ甲子園：<span class="count">0</span>人</div>
+    </head>
+    <body>
+        <div id="main">
+        </div>
+    </body>
+</html>
