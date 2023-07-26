@@ -1,5 +1,5 @@
 $(window).on('load', function () {
-    console.log("var 0.1.20");
+    console.log("var 0.1.21");
 
 
 	var element = $(".TextTyping");
@@ -93,4 +93,8 @@ function pageLoad(pagename){
 function pageClose(){
     $(".page_close").css({display:"none",opacity:0});
     $("#page").animate({height:"0"},200);
+}
+
+function pageJump(pagename){
+    window.location.href = pagename+".html";
 }
