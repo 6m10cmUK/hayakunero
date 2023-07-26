@@ -34,6 +34,10 @@
                 -webkit-transform: translate(-50%, 0);
                 -ms-transform: translate(-50%, 0);
             }
+
+            .selected{
+                background-color: lightgray;
+            }
         </style>
         <script>
             //生成したAPIのURLを指定
@@ -81,7 +85,7 @@
                         html+="<tr>";
 
                         if(dairi[i]?.trim()){
-                            html+=`<td>${dairi[i]}</td>`;
+                            html+=`<td class="代理${i}">${dairi[i]}</td>`;
                             charCount++;
                         }else{
                             html+="<td>-</td>";
@@ -91,7 +95,7 @@
                             if(sousaku[key][i] == undefined){
                                 html+=`<td>-</td>`;
                             }else{
-                                html+=`<td>${sousaku[key][i][0]}<br><span>${sousaku[key][i][1]}</span></td>`;
+                                html+=`<td class="${key}${i}">${sousaku[key][i][0]}<br><span>${sousaku[key][i][1]}</span></td>`;
                                 charCount++;
                             }
                         }
@@ -108,12 +112,22 @@
             function backButton(){
                 window.location.href = "index.html"
             }
+
+            function selected(className){
+                console.log(className);
+                var c = $(`.${className}`);
+                if(c.hasClass("selected")){
+                    $(`.${className}`).removeClass("selected");
+                }else{
+                    $(`.${className}`).addClass("selected");
+                }
+            }
         </script>
+    </head>
+    <body>
         <div id="nowLoading"><p>Now Loading...</p></div>
         <div id="backButton" onclick="backButton()">もどる</div>
          <div>はやく寝ろ甲子園：<span class="count">0</span>人</div>
-    </head>
-    <body>
         <div id="main">
         </div>
     </body>
