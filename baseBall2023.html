@@ -1,16 +1,20 @@
 <html>
     <head>
         <script src="js/jquery-3.6.0.min.js"></script>
+        <title>はやく寝ろ甲子園2023</title>
         <style>
             td>span{
                 font-size: 10px;
             }
             table{
                 margin: 30px auto 100px auto;
-                overflow: scroll;
+                border-spacing: 20px 0;
+                border: none
             }
-            td{
-                padding: 4px 7px;
+            th, td{
+                padding: 10px;
+                border: none;
+                background-color: rgb(220, 220, 220);
             }
             #nowLoading{
                 background-color: white;
@@ -36,7 +40,22 @@
             }
 
             .selected{
-                background-color: lightgray;
+                background-color: gray;
+            }
+
+            .notfound{
+                display: none;
+            }
+
+            #title{
+                text-align: center;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            #title>.count{
+                font-size: 14px;
+                font-weight:lighter;
+                margin: 0 20px;
             }
         </style>
         <script>
@@ -49,6 +68,8 @@
             var sousaku = {};
             var charCount = 0;
 
+            const player = ["姉ちゃん","ユピテル","３０１０","みけ"]
+
             $(()=>{
                 fetch(api_url)
                 .then(function (fetch_data) {
@@ -60,13 +81,20 @@
                         for(var j=2; j<=5; j++){
                             var data = json[i][j].match(/【(.*)】/);
                             if(data == null){continue}
+                            if(j==5){
+                                data[1]="<span >(※)</span> "+data[1]
+                            }
                             data[1]+="】【"+json[i][1];
                             charDatas.push(data[1].split("】【"));
+                            
                         }
                     }
                     console.dir(charDatas);
                     console.dir(dairi);
+                    var cc = 0;
+                    var pnt = "";
                     for(charData of charDatas){
+
                         var inputData = [charData[0],charData[2]];
                         if(sousaku[charData[1]] == undefined){
                             sousaku[charData[1]]=[inputData];
@@ -81,19 +109,23 @@
                         html+=`<th>${key}</th>`;
                     }
                     html+="</tr>";
-                    for(var i=0; i<30; i++){
+                    for(var i=0; i<40; i++){
                         html+="<tr>";
 
                         if(dairi[i]?.trim()){
-                            html+=`<td class="代理${i}">${dairi[i]}</td>`;
-                            charCount++;
+                            if(player.includes(dairi[i])){
+                                html+=`<td class="代理${i} selected">${dairi[i]}</td>`;
+                            }else{
+                                html+=`<td class="代理${i}">${dairi[i]}</td>`;
+                                charCount++;
+                            }
                         }else{
-                            html+="<td>-</td>";
+                            html+="<td class='notfound'>-</td>";
                         }
 
                         for(var key of keys){
                             if(sousaku[key][i] == undefined){
-                                html+=`<td>-</td>`;
+                                html+="<td class='notfound'>-</td>";
                             }else{
                                 html+=`<td class="${key}${i}">${sousaku[key][i][0]}<br><span>${sousaku[key][i][1]}</span></td>`;
                                 charCount++;
@@ -104,7 +136,7 @@
                     html+="</table>";
                     $("#main").html(html);
                     console.log(charCount);
-                    $(".count").html(`${charCount}/${15*3}`);
+                    $(".count").html(`${charCount}人`);
                     $("#nowLoading").css({display:"none"});
                 });
             });
@@ -127,7 +159,7 @@
     <body>
         <div id="nowLoading"><p>Now Loading...</p></div>
         <div id="backButton" onclick="backButton()">もどる</div>
-         <div>はやく寝ろ甲子園：<span class="count">0</span>人</div>
+         <div id="title">はやく寝ろ甲子園2023<span class="count">0人</span></div>
         <div id="main">
         </div>
     </body>
