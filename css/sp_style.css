@@ -54,22 +54,7 @@
     }
 
     .leftgo, .rightgo{
-        top: -220px;
-    }
-    .leftgo{
-        left:-40px;
-    }
-    
-    .leftgo:hover{
-        left:-50px;
-    }
-    
-    .rightgo{
-        right:-40px;
-    }
-    
-    .rightgo:hover{
-        right:-50px;
+        top: 86%;
     }
 
     .sp_touch_area{

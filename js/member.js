@@ -116,7 +116,7 @@ let member = {
         name:"れとろ",
         title:"ちいこきｲﾉﾁは健康にいい",
         discription:'貝殻と生き物全般が好きな性別不詳ﾂｰﾄﾝ伏し目。<br>抱えてる黒いおはぎの方が本来の姿。<br>定期的にちいこきｲﾉﾁを爆誕させる。',
-        height: "10～192cm",
+        height: "10～192cm(可変)",
         birthday: "2/4",
         twitter:"https://twitter.com/0490sgr",
         tag:"APEX,Splatoon3,R6S,MINECRAFT,マイクラ人狼,麻雀",

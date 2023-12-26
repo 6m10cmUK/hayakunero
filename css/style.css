@@ -357,6 +357,15 @@ left-1532
     display: none;
 }
 
+.profile_cover{
+    z-index: 7101;
+    inset: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
 .profile .profile_circle{
     position: absolute;
     background-color: black;
@@ -414,7 +423,7 @@ left-1532
     width: 40px;
 }
 
-.profile .tatie{
+.profile>.tatie{
     position: absolute;
     z-index: 7205;
     opacity: 0;
@@ -425,20 +434,20 @@ left-1532
     display: none;
 }
 
-.profile .tatie_on{
+.profile>.tatie_on{
     opacity:1;
     left: -150px;
 }
 
-#takei .tatie{
+#takei>.tatie{
     left: 100px;
 }
 
-#takei .tatie_on{
+#takei>.tatie_on{
     left: -50px;
 }
 
-.profile .back{
+.profile>.back{
     position: absolute;
     bottom: -50px;
     right: 100px;

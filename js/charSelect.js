@@ -189,7 +189,7 @@ $(function() {
     $(`.${name[17]}_bt`).click(()=>{nowchar=17; profileView(name[17]);});
     $(`.${name[18]}_bt`).click(()=>{nowchar=18; profileView(name[18]);});
 
-    $(".back").click(()=>{
+    $(".profile_cover").click(()=>{
       profileViewClose();
       // spMenuOpen("L");
     });
@@ -201,7 +201,6 @@ $(function() {
   $(".rightgo").click(()=>{
     rightgo();
   });
-
 });
 
 var name_ = ["ami", "ane", "chiwa", "cta", "fran", "gale", "han", "imo", "kyomu", "mike", "retoro", "sayu", "shigure", "takei", "via", "yoro", "yupi", "zen"];
@@ -234,6 +233,7 @@ var name_ = ["ami", "ane", "chiwa", "cta", "fran", "gale", "han", "imo", "kyomu"
 
 function profileViewClose(){
   $(".profile").css({display:"none"})
+  $(".profile_cover").css({display:"none"})
   $(".profile .tatie").css({display:"none"}).removeClass("tatie_on");
   $(".discription").removeClass("discription_on");
   $(".profile .profile_circle").css({
@@ -250,6 +250,7 @@ function profileViewClose(){
 
 function profileView(name){
   $(".profile").css({display:"block"}).attr({id:name});
+  $(".profile_cover").css({display:"block"});
   var color = member[name].color;
   if(!color.startsWith("#")){
     color = member[name].color2;

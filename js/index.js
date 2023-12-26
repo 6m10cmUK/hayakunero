@@ -57,6 +57,11 @@ $(window).on('load', function () {
             },500);  
         },2800);
     },4000);
+
+    $(".backdrop").click(()=>{
+        console.log("aaa");
+    })
+    
 });
 
 function TextTypingAnime() {
