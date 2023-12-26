@@ -1,21 +1,32 @@
-<!-- 普通のHTMLと同じように書いてOK -->
+<html>
+    <head>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script>
+            var api_url = "https://script.google.com/macros/s/AKfycbxk1PnJvV5PhiRAFnUC6vkpnxMTvJxAq6wgFqBF5hqoyypqHyRivSCGCZwtvOtdTas5wA/exec";
 
-<script>
-    var api_url = "https://script.google.com/macros/s/AKfycby3RtQ_IWkIXvCVw5T8Pp-W-jY1me3GRuYBxLzMJc_nFxMKz12iZTIOqdoNeNWiOyV1Pg/exec";
-
-    $(()=>{
-        fetch(api_url)
-        .then(function (fetch_data) {
-            return fetch_data.json();
-        })
-        .then(function (json) {
-            for (var i in json) {
-                console.log(json);
+            console.log("aaaaa")
+            fetch(api_url)
+            .then(function (fetch_data) {
+                return fetch_data.json();
+            })
+            .then(function (json) {
+                for (var i in json) {
+                    console.log(json);
+                }
+            });
+        </script>
+        <style>
+            .content{
+                background-color: rgba(34, 0, 255, 0.42);
+                position: absolute;
+                inset: 0;
             }
-        });
-    });
-</script>
-
-<div>
-    <img style="width: 100px;" src="http://drive.google.com/uc?export=view&id=1trE9bd1LdHL9jlK5x5UKNWTywtflJmY3" alt=""/>
-</div>
+        </style>
+        
+    </head>
+    <body>
+        <div>
+            <img style="width: 100px;" src="http://drive.google.com/uc?export=view&id=1trE9bd1LdHL9jlK5x5UKNWTywtflJmY3" alt=""/>
+        </div>
+    </body>
+</html>
