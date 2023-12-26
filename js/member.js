@@ -58,12 +58,12 @@ let member = {
     "gale":{
         color:"#82c6b7",
         name:"gale",
-        title:"",
-        discription:"",
-        height: "",
-        birthday: "",
+        title:"ん？今少林◯ッカーの話した？",
+        discription:"何かの研究をしている訳でもなく好きで白衣を着ているだけのただの漫画好き。<br>普段はヒィヒィ言いながらおさかなと戯れている。<br>頬のマークは某サッカーアニメリスペクト。",
+        height: "162cm",
+        birthday: "2/26",
         twitter:"https://twitter.com/gale43hs",
-        tag:"Splatoon3,ポケモン,遊戯王",
+        tag:"Splatoon3,ポケモン,遊戯王,麻雀",
         tagcolor:"white"
     }, 
     "han":{
